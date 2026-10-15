@@ -22,5 +22,16 @@
     "shape": "jar",
     "tag": "شێدارکەرەوە",
     "image": ""
-  }
+  },{
+  "id": "p4",
+  "name": "ناوی بەرهەم بە کوردی",
+  "english": "English Name",
+  "category": "perfume",
+  "type": "عەتر",
+  "desc": "وەسفی کورت لەسەر بەرهەمەکە لێرە بنووسە.",
+  "price": 95000,
+  "shape": "bottle",
+  "tag": "نوێ",
+  "image": ""
+}
 ]
