@@ -31,24 +31,7 @@ footer{margin-top:54px;background:#34252c;color:#fff4f7;padding:42px 0 20px}.foo
 @media(max-width:900px){.navlinks{gap:12px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:18px}.hero-art{min-height:370px}.bottle{width:100px;height:165px}.bottle.tall{height:205px;width:90px}.bottle.small{height:135px;width:80px}.categories{gap:12px}.category{padding:15px;gap:10px}.category-icon{width:54px;height:54px;font-size:25px}}
 @media(max-width:650px){.container{width:min(100% - 24px,1160px)}.topbar{font-size:11px}.nav{min-height:68px}.brand-mark{width:40px;height:40px}.brand-name{font-size:16px}.navlinks{display:none;position:absolute;top:68px;right:0;left:0;padding:18px 22px;background:#fffaf8;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:12px}.navlinks.open{display:flex}.menu-btn{display:grid}.nav-actions .btn{display:none}.hero{padding-top:24px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:310px;grid-row:1}.hero-copy{font-size:14px}.hero-grid>div:first-child{grid-row:2}.hero-stamp{top:15px;right:15px}.floating-note{bottom:14px;left:14px}.section{padding:36px 0}.section-head{align-items:start;flex-direction:column;gap:6px}.categories{grid-template-columns:1fr}.category{padding:14px}.product-visual{height:165px}.product-info{padding:11px}.product-info h3{font-size:13px}.product-info p{font-size:10px;min-height:36px}.price{font-size:12px}.add-btn{width:32px;height:32px}.promise{grid-template-columns:1fr;padding:22px;gap:18px}.about-grid{grid-template-columns:1fr;gap:22px}.about-art{min-height:220px}.about-copy h2{font-size:26px}.newsletter{padding:24px;align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr;gap:20px}.trust-row{gap:12px}.hero-buttons .btn{padding:11px 17px;font-size:13px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-
 .uploaded-product-image{width:100%;height:100%;object-fit:contain;padding:12px;position:absolute;inset:0;background:linear-gradient(145deg,#fffaf9,#f3e8e8)}
-.manager-wrap{background:linear-gradient(135deg,#fffdfb,#f8edf0 55%,#edf1eb);border:1px solid #eadde1;border-radius:26px;padding:24px;box-shadow:var(--shadow)}
-.manager-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.manager-panel{display:none;margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
-.manager-panel.open{display:block}
-.manager-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.manager-field{display:flex;flex-direction:column;gap:6px}
-.manager-field.full{grid-column:1/-1}
-.manager-field label{font-size:13px;font-weight:700;color:var(--ink)}
-.manager-field input,.manager-field select,.manager-field textarea{width:100%;border:1px solid #e6d8de;border-radius:13px;background:#fff;padding:11px 12px;outline:none;color:var(--ink)}
-.manager-field input:focus,.manager-field select:focus,.manager-field textarea:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(135,87,107,.10)}
-.manager-help{font-size:12px;color:var(--muted);margin:12px 0 0}
-.manager-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.manager-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:white;padding:7px 10px;border-radius:12px;font-size:12px}
-.manager-chip button{border:0;background:#f8e5e9;color:#87576b;border-radius:8px;padding:4px 8px;cursor:pointer}
-@media(max-width:650px){.manager-wrap{padding:16px}.manager-grid{grid-template-columns:1fr}.manager-field.full{grid-column:auto}}
-
 </style>
 </head>
 <body>
@@ -95,4 +78,125 @@ footer{margin-top:54px;background:#34252c;color:#fff4f7;padding:42px 0 20px}.foo
 </section>
 <section class="section" id="products">
  <div class="container">
-  <div class="section-head"><div><span class="eyebrow">هەڵبژاردەی Sara</span><h2>بەرهەمەکان</h2></div><p>بە
+  <div class="section-head"><div><span class="eyebrow">هەڵبژاردەی Sara</span><h2>بەرهەمەکان</h2></div><p>بەرهەمێک بدۆزەرەوە کە لەگەڵ تۆ بگونجێت.</p></div>
+  <div class="toolbar">
+   <label class="search-wrap"><span class="search-symbol">⌕</span><input type="search" id="searchInput" placeholder="بەدوای ناوی بەرهەم بگەڕێ..." aria-label="گەڕان بەدوای بەرهەم"></label>
+   <div class="filters" role="group" aria-label="پاڵاوتنی بەرهەم"><button class="filter active" data-filter="all">هەمووی</button><button class="filter" data-filter="perfume">عەتر</button><button class="filter" data-filter="skincare">چاودێری پێست</button><button class="filter" data-filter="makeup">میکاپ</button></div>
+  </div>
+  <div class="product-grid" id="productGrid" aria-live="polite"></div>
+  <div class="demo-note">تێبینی: ئەم بەرهەمانە نموونەی دیزاینن و نرخەکان بۆ تاقیکردنەوەن؛ پێش بڵاوکردنەوە ناو، وێنە، نرخ و بەردەستبوونی بەرهەمە ڕاستەقینەکانت دابنێ. داواکاری واتساپیش پێویستی بە دانانی ژمارەی ڕاستەقینەی فرۆشگاکەت هەیە.</div>
+ </div>
+</section>
+<section class="section">
+ <div class="container">
+  <div class="promise">
+   <div class="promise-item"><span class="symbol">💗</span><div><strong>هەڵبژاردنی بە وردی</strong><p>بەرهەمەکان بە پێی پێویستی و دڵخوازی کڕیار هەڵبژێرە.</p></div></div>
+   <div class="promise-item"><span class="symbol">💬</span><div><strong>داواکردنی ئاسان</strong><p>داواکارییەکەت لە ڕێگەی واتساپەوە بنێرە و وردەکارییەکان پشتڕاست بکەرەوە.</p></div></div>
+   <div class="promise-item"><span class="symbol">🎀</span><div><strong>گرنگی بە وردەکاری</strong><p>هەموو هەنگاوێک لە هەڵبژاردنەوە تا گەیاندن بە گرنگییەوە دەگرین.</p></div></div>
+  </div>
+ </div>
+</section>
+<section class="section" id="about">
+ <div class="container about-grid">
+  <div class="about-art" aria-hidden="true">🌸🧴💗</div>
+  <div class="about-copy"><span class="eyebrow">چیرۆکی ئێمە</span><h2>جوانی تەنها بەرهەم نییە؛ هەستێکە.</h2><p>Sara Beauty Shop بۆ ئەوەیە یارمەتیت بدات بەرهەمەکانی جوانی بە شێوەیەکی ئاسان ببینیت و هەڵیبژێریت. لێرە دەتوانیت عەتر، بەرهەمەکانی چاودێری پێست و میکاپ لە یەک شوێندا بدۆزیتەوە.</p><p>پرسیارت هەیە؟ پێش داواکردن لە واتساپەوە پەیوەندیمان پێوە بکە بۆ زانیاریی زیاتر لەسەر بەرهەم، نرخ و گەیاندن.</p><a class="btn" href="#products">بەرهەمەکان ببینە</a></div>
+ </div>
+</section>
+<section class="section" id="faq">
+ <div class="container">
+  <div class="section-head" style="justify-content:center;text-align:center"><div><span class="eyebrow">یارمەتی بۆ تۆ</span><h2>پرسیارە باوەکان</h2><p>پێش داواکردن، ئەمانە بخوێنەوە.</p></div></div>
+  <div class="faq">
+   <details><summary>چۆن داواکارییەکەم بنێرم؟</summary><p>بەرهەمەکان زیاد بکە بۆ سەبەتە، پاشان دوگمەی ناردنی داواکاری بە واتساپ دابگرە. پەیامێکی ئامادە دەکرێتەوە بۆ ناردن.</p></details>
+   <details><summary>ئایا نرخەکان بە دیناری عێراقین؟</summary><p>بەڵێ، نرخەکان لە دیزاینەکەدا بە دیناری عێراقی پیشان دەدرێن. نرخە نموونەییەکان پێویستە بە نرخە ڕاستەقینەکان بگۆڕدرێن.</p></details>
+   <details><summary>گەیاندن بۆ کوێ دەکەن؟</summary><p>بازاڕی ئامانج کوردستان و عێراقە. وردەکاریی شار، کرێی گەیاندن و ماوەی گەیاندن لە کاتی پشتڕاستکردنەوەی داواکاری ڕوون دەکرێتەوە.</p></details>
+   <details><summary>چۆن دڵنیابم بەرهەمێک لەگەڵ پێستم دەگونجێت؟</summary><p>پێش کڕین، جۆری پێست و پێویستییەکانت لەگەڵ فرۆشیار باس بکە و لیستی پێکهاتەکان بخوێنەوە؛ ئەگەر پێستت هەستیارە، تاقیکردنەوەی ناوچەیەکی بچووک یارمەتیدەرە.</p></details>
+  </div>
+ </div>
+</section>
+<section class="section">
+ <div class="container"><div class="newsletter"><div><h2>هەڵبژاردەی جوانی، بە شێوەی تایبەت بۆ تۆ 🌷</h2><p>بەرهەمێکت لە دڵە؟ لە سەبەتەوە داواکارییەکەت بە واتساپ بنێرە.</p></div><a class="btn" href="#products">دەست پێ بکە ←</a></div></div>
+</section>
+</main>
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="footer-brand">Sara Beauty Shop 🌸</div><p>عەتر، چاودێری پێست و میکاپ؛ هەڵبژاردەی جوانی بۆ تۆ.</p><div class="socials"><a href="#products">بەرهەمەکان</a><a href="#about">دەربارەمان</a></div></div>
+   <div><h3>بەستەرە خێراکان</h3><div class="footer-links"><a href="#home">سەرەتا</a><a href="#categories">بەشەکان</a><a href="#products">فرۆشگا</a><a href="#faq">پرسیارەکان</a></div></div>
+   <div><h3>پەیوەندیمان پێوە بکە</h3><p>داواکاری و پرسیارەکان لە ڕێگەی واتساپەوە وەردەگیرێن.</p><a class="btn btn-light" id="footerWhatsapp" href="#products">پەیوەندی بە واتساپ</a><p>ئینستاگرام: @sarabeautyshop <small>(لینکی پەیجەکەت زیاد بکە)</small></p></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> Sara Beauty Shop. هەموو مافەکان پارێزراون.</div>
+ </div>
+</footer>
+<a class="whatsapp-float" id="whatsappFloat" href="#products" aria-label="پەیوەندی بە واتساپ" title="واتساپ">✆</a>
+<div class="toast" id="toast" role="status"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="سەبەتەی کڕین" aria-hidden="true">
+ <div class="cart-head"><h2>🛍 سەبەتەی کڕین</h2><button class="close-cart" id="closeCart" aria-label="داخستن">✕</button></div>
+ <div class="cart-items" id="cartItems"></div>
+ <div class="cart-total"><div class="total-line"><span>کۆی گشتی</span><span id="cartTotal">٠ د.ع</span></div><button class="btn" id="checkoutBtn" style="width:100%">ناردنی داواکاری بە واتساپ ↗</button><p style="font-size:10px;color:var(--muted);text-align:center">داواکارییەکەت پێش ناردن لە واتساپدا دەتوانیت بپشکنیت.</p></div>
+</aside>
+<script>
+const WHATSAPP_NUMBER = "9647744484966";
+let PRODUCTS = [];
+async function loadProducts(){
+  try{
+    const r = await fetch('products.json',{cache:'no-store'});
+    if(r.ok){const d=await r.json();if(Array.isArray(d))PRODUCTS=d.filter(p=>p&&p.id&&p.name&&Number(p.price)>0);}
+  }catch(e){console.warn(e)}
+}
+let activeFilter="all", cart={};
+const fmt=n=>new Intl.NumberFormat("ckb-IQ").format(n)+" د.ع";
+const grid=document.getElementById("productGrid");
+
+function escapeHTML(value){
+ return String(value??"").replace(/[&<>"']/g, ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+}
+function renderProducts(){
+ const q=document.getElementById("searchInput").value.trim().toLowerCase();
+ const items=PRODUCTS.filter(p=>(activeFilter==="all"||p.category===activeFilter)&&(!q||(p.name+" "+p.english+" "+p.type+" "+p.desc).toLowerCase().includes(q)));
+ grid.innerHTML=items.map(p=>`<article class="product-card">
+  <div class="product-visual ${p.category}"><span class="tag">${escapeHTML(p.tag||"تایبەت")}</span>${p.image?`<img class="uploaded-product-image" src="${p.image}" alt="${escapeHTML(p.name)}">`:`<div class="product-shape ${p.shape||"bottle"}">${p.shape==="jar"?"SARA":p.shape==="lip"?"":"SARA<br>BEAUTY"}</div>`}</div>
+  <div class="product-info"><span class="product-type">${escapeHTML(p.type)}</span><h3>${escapeHTML(p.name)}</h3><p>${escapeHTML(p.desc)}</p><div class="product-bottom"><span class="price">${fmt(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="زیادکردنی ${p.name} بۆ سەبەتە" title="زیادکردن بۆ سەبەتە">+</button></div></div>
+ </article>`).join("");
+ if(!items.length)grid.innerHTML='<p style="grid-column:1/-1;text-align:center;color:#78666e;padding:35px">هیچ بەرهەمێک نەدۆزرایەوە؛ وشەیەکی تر تاقی بکەرەوە.</p>';
+}
+function renderCart(){
+ const entries=Object.entries(cart).filter(([id,n])=>n>0);
+ const count=entries.reduce((s,[id,n])=>s+n,0);
+ const badge=document.getElementById("cartCount");badge.textContent=count;badge.style.display=count?"grid":"none";
+ const total=entries.reduce((s,[id,n])=>s+PRODUCTS.find(p=>p.id===id).price*n,0);
+ document.getElementById("cartTotal").textContent=fmt(total);
+ document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,n])=>{const p=PRODUCTS.find(x=>x.id===id);return `<div class="cart-row"><div><strong>${escapeHTML(p.name)}</strong><small>${fmt(p.price)} × ${n}</small></div><div class="qty"><button data-qty="${id}" data-delta="-1" aria-label="کەمکردنەوە">−</button><span>${n}</span><button data-qty="${id}" data-delta="1" aria-label="زیادکردن">+</button></div></div>`}).join(""):'<div class="cart-empty">🌸<p>سەبەتەکەت هێشتا بەتاڵە.</p><small>بەرهەمێک زیاد بکە بۆ دەستپێکردن.</small></div>';
+ document.getElementById("checkoutBtn").disabled=!entries.length;
+ document.getElementById("checkoutBtn").style.opacity=entries.length?"1":".5";
+}
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2300)}
+function openCart(){document.getElementById("cartPanel").classList.add("open");document.getElementById("cartPanel").setAttribute("aria-hidden","false")}
+function closeCart(){document.getElementById("cartPanel").classList.remove("open");document.getElementById("cartPanel").setAttribute("aria-hidden","true")}
+function validWhatsapp(){return /^964\d{9,12}$/.test(WHATSAPP_NUMBER)&&!WHATSAPP_NUMBER.includes("X")}
+function whatsappLink(message){if(!validWhatsapp()){toast("تکایە ژمارەی ڕاستەقینەی واتساپ لە کۆدی فایلەکە دابنێ.");return null}return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message)}
+function goWhatsapp(message){const url=whatsappLink(message);if(url)window.open(url,"_blank","noopener,noreferrer")}
+grid.addEventListener("click",e=>{const b=e.target.closest("[data-add]");if(!b)return;const id=b.dataset.add;cart[id]=(cart[id]||0)+1;renderCart();toast("بەرهەمەکە زیاد کرا بۆ سەبەتە 🌸")});
+document.getElementById("cartItems").addEventListener("click",e=>{const b=e.target.closest("[data-qty]");if(!b)return;const id=b.dataset.qty;cart[id]=(cart[id]||0)+Number(b.dataset.delta);if(cart[id]<=0)delete cart[id];renderCart()});
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{activeFilter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProducts()}));
+document.getElementById("searchInput").addEventListener("input",renderProducts);
+document.querySelectorAll("[data-category-link]").forEach(a=>a.addEventListener("click",()=>{activeFilter=a.dataset.categoryLink;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.filter===activeFilter));renderProducts()}));
+document.getElementById("openCart").addEventListener("click",openCart);document.getElementById("closeCart").addEventListener("click",closeCart);
+document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("navlinks").classList.toggle("open"));
+document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navlinks").classList.remove("open")));
+document.getElementById("checkoutBtn").addEventListener("click",()=>{
+ const entries=Object.entries(cart).filter(([id,n])=>n>0);if(!entries.length)return;
+ const lines=entries.map(([id,n])=>{const p=PRODUCTS.find(x=>x.id===id);return `• ${p.name} — ${n} دانە — ${fmt(p.price*n)}`});
+ const total=entries.reduce((s,[id,n])=>s+PRODUCTS.find(p=>p.id===id).price*n,0);
+ goWhatsapp("سڵاو Sara Beauty Shop 🌸\nدەمەوێت ئەم بەرهەمانە داوا بکەم:\n"+lines.join("\n")+"\n\nکۆی گشتی: "+fmt(total)+"\nتکایە نرخ و بەردەستبوون و کرێی گەیاندن بۆم پشتڕاست بکەنەوە.\nناو:\nشار و ناونیشان:");
+});
+document.getElementById("whatsappFloat").addEventListener("click",e=>{e.preventDefault();goWhatsapp("سڵاو Sara Beauty Shop 🌸، دەمەوێت زانیاری لەسەر بەرهەمەکان و گەیاندن بزانم.")});
+document.getElementById("footerWhatsapp").addEventListener("click",e=>{e.preventDefault();goWhatsapp("سڵاو Sara Beauty Shop 🌸، دەمەوێت پەیوەندیتان پێوە بکەم.")});
+document.getElementById("year").textContent=new Date().getFullYear();
+(async()=>{
+  await loadProducts();
+  renderProducts();
+  renderCart();
+})();
+</script>
+</body>
+</html>
