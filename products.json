@@ -13,7 +13,7 @@
   },
   {
     "id": "s1",
-    "name": "هایډرەیتینگ کرێم",
+    "name": "مینی سێتی چاودێری قژ",
     "english": "Hydrating Face Cream",
     "category": "skincare",
     "type": "چاودێری پێست",
@@ -26,10 +26,10 @@
   "id": "p4",
   "name": "ناوی بەرهەم بە کوردی",
   "english": "Kérastase Mini Iconics Trio Hair Ritual",
-  "category": "serum",
+  "category": "skincare",
   "type": "سێتی چاودێری قژ",
   "desc": "بەهێزکردن و خۆراک پێدان ، رەونەقدارکردنی قژ .",
-  "price": ,144000,
+  "price": 144000,
   "shape": "bottle",
   "tag": "نوێ",
   "image": ""
