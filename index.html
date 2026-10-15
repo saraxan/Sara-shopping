@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f7">
+<meta name="description" content="Sara Beauty Shop — فرۆشگای عەتر، چاودێری پێست و میکاپ. داواکاری بە واتساپ.">
+<title>Sara Beauty Shop | سارا بیوتی شۆپ</title>
+<style>
+:root{--pink:#e7b9c8;--pink2:#f7e8ed;--rose:#87576b;--ink:#342b31;--muted:#7c7077;--cream:#fcf8f5;--white:#fff;--line:#eee2e5;--champagne:#d8c09a;--sage:#e3ebe4;--shadow:0 16px 42px rgba(83,58,69,.10);--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,"Noto Sans Arabic","Arial",sans-serif;line-height:1.8}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,.product-card{ -webkit-tap-highlight-color:transparent}.container{width:min(1160px,calc(100% - 32px));margin:auto}
+.topbar{background:linear-gradient(90deg,#795064,#946b79,#795064);color:#fff;text-align:center;padding:8px 12px;font-size:13px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,248,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;min-width:max-content}.brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f6e5e9,#d8c09a 52%,#e7b9c8);color:#795064;font-family:Georgia,serif;font-size:22px;font-weight:bold}.brand-name{font-size:19px;font-weight:800;line-height:1.25}.brand-name small{display:block;font-size:10px;letter-spacing:2px;color:var(--rose);direction:ltr;text-align:right;margin-top:4px}
+.navlinks{display:flex;align-items:center;gap:24px;font-size:14px;color:#5c4a51}.navlinks a:hover{color:var(--rose)}.nav-actions{display:flex;align-items:center;gap:8px}.icon-btn{border:1px solid var(--line);background:#fff;border-radius:50%;width:42px;height:42px;display:grid;place-items:center;cursor:pointer}.menu-btn{display:none}
+.btn{border:0;border-radius:999px;background:var(--rose);color:white;padding:12px 22px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{background:#79344d;transform:translateY(-1px)}.btn-light{background:white;color:var(--rose);border:1px solid var(--line)}.btn-light:hover{background:#fff0f4;color:var(--rose)}
+.hero{padding:48px 0 36px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}.eyebrow{color:var(--rose);font-weight:700;font-size:13px;letter-spacing:.2px;display:inline-flex;gap:8px;align-items:center}.eyebrow:before{content:"";height:2px;width:28px;background:var(--pink)}
+h1{font-size:clamp(32px,5vw,58px);line-height:1.35;letter-spacing:-1.2px;margin:14px 0 16px}h1 span{color:var(--rose)}.hero-copy{font-size:16px;color:var(--muted);max-width:520px;margin:0 0 25px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}.trust-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:27px;color:var(--muted);font-size:12px}.trust-row span{display:flex;gap:6px;align-items:center}.hero-art{min-height:430px;position:relative;border-radius:34px;overflow:hidden;background:radial-gradient(circle at 68% 25%,#fff 0 7%,transparent 7.5%),linear-gradient(145deg,#fbe7ed,#f2c6d5 52%,#e8a7bd);display:flex;align-items:center;justify-content:center}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.65);border-radius:50%;width:340px;height:340px}.hero-art:after{width:430px;height:430px}.hero-stamp{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.72);padding:9px 14px;border-radius:999px;color:#8b3f5c;font-size:12px;font-weight:700;z-index:2}.bottle-scene{position:relative;z-index:1;display:flex;align-items:end;gap:13px;filter:drop-shadow(0 18px 18px rgba(102,45,68,.15));transform:rotate(-3deg)}.bottle{width:125px;height:190px;border-radius:26px 26px 32px 32px;background:linear-gradient(110deg,rgba(255,255,255,.88),rgba(255,255,255,.35) 25%,rgba(203,111,145,.55) 70%,rgba(255,255,255,.7));border:2px solid rgba(255,255,255,.8);position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#8a3e5b;font-family:Georgia,serif;font-size:17px;line-height:1.4}.bottle:before{content:"";position:absolute;top:-28px;width:40px;height:31px;background:linear-gradient(90deg,#c7a16f,#f4dfb5,#a87e4c);border-radius:6px 6px 2px 2px}.bottle:after{content:"EAU DE PARFUM";font-family:Arial,sans-serif;font-size:7px;letter-spacing:1px;position:absolute;bottom:30px;left:0;right:0}.bottle.tall{height:230px;width:105px;border-radius:18px 18px 26px 26px;background:linear-gradient(110deg,#fef6ed,#d9a3b2 58%,#fff3e9)}.bottle.small{height:150px;width:95px;background:linear-gradient(110deg,#fff,#dcb0bf 70%,#fff)}
+.floating-note{position:absolute;bottom:26px;left:22px;background:#fffaf8eF;border:1px solid #fff;border-radius:17px;padding:12px 16px;box-shadow:var(--shadow);z-index:2}.floating-note strong{display:block;font-size:13px}.floating-note small{color:var(--muted);font-size:11px}
+.section{padding:54px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:24px}.section-head h2{font-size:clamp(24px,3vw,34px);margin:5px 0 0}.section-head p{color:var(--muted);font-size:13px;margin:0}.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.category{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:white;display:flex;align-items:center;gap:16px;transition:.2s}.category:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.category-icon{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;background:#fff0f4;font-size:30px;flex-shrink:0}.category h3{font-size:17px;margin:0 0 3px}.category p{font-size:12px;color:var(--muted);margin:0}.category .arrow{margin-right:auto;color:var(--rose);font-size:20px}
+.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}.search-wrap{flex:1;min-width:200px;position:relative}.search-wrap input{width:100%;border:1px solid var(--line);background:white;border-radius:999px;padding:12px 44px 12px 16px;outline:none}.search-wrap input:focus{border-color:var(--pink)}.search-symbol{position:absolute;right:16px;top:9px;color:var(--muted)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:white;border-radius:999px;padding:9px 15px;font-size:12px;cursor:pointer;color:var(--muted)}.filter.active,.filter:hover{background:var(--rose);border-color:var(--rose);color:white}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.product-card{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.22s;display:flex;flex-direction:column;min-width:0}.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product-visual{height:205px;position:relative;display:grid;place-items:center;background:linear-gradient(145deg,#fbf1f3,#f5e6e8 58%,#e5ebe3);overflow:hidden}.product-visual.skin{background:linear-gradient(145deg,#f9f1e9,#ead3c4)}.product-visual.makeup{background:linear-gradient(145deg,#fce9ee,#e9c2d0)}.product-visual .tag{position:absolute;top:12px;right:12px;background:white;border-radius:999px;padding:4px 9px;font-size:10px;color:var(--rose);z-index:2}.product-shape{width:76px;height:116px;border-radius:16px 16px 22px 22px;position:relative;background:linear-gradient(100deg,#fff,#d6a1b4 45%,#f9e6eb 78%);border:2px solid rgba(255,255,255,.8);box-shadow:0 14px 20px #8d496022;display:grid;place-items:center;text-align:center;color:#8c4962;font-family:Georgia,serif;font-size:11px;padding-top:20px}.product-shape:before{content:"";position:absolute;top:-21px;width:28px;height:23px;border-radius:4px 4px 1px 1px;background:linear-gradient(90deg,#c2a06f,#f6e0b6,#b18a56)}.product-shape.jar{width:96px;height:70px;border-radius:12px 12px 19px 19px;background:linear-gradient(100deg,#fff,#e8d8ce 50%,#fff);padding-top:12px}.product-shape.jar:before{top:-13px;width:98px;height:15px;border-radius:5px;background:linear-gradient(#d9c1ad,#fff,#d1b5a0)}.product-shape.lip{height:120px;width:38px;border-radius:8px;background:linear-gradient(90deg,#7f304b,#d87998,#a74868);padding:0}.product-shape.lip:before{width:26px;height:34px;top:-30px;border-radius:10px 10px 3px 3px;background:linear-gradient(90deg,#d99db0,#fff0f3,#c37d96)}.product-shape.lip:after{content:"";position:absolute;top:-2px;width:18px;height:24px;background:#a54e6d;border-radius:70% 70% 35% 35%}.product-info{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}.product-type{font-size:10px;color:var(--rose);font-weight:700}.product-info h3{font-size:14px;margin:0;line-height:1.6}.product-info p{font-size:11px;color:var(--muted);margin:0;min-height:40px}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}.price{font-weight:800;font-size:14px;white-space:nowrap}.price small{font-size:10px;color:var(--muted);font-weight:400}.add-btn{border:0;background:#fff0f4;color:var(--rose);width:36px;height:36px;border-radius:50%;font-size:22px;cursor:pointer}.add-btn:hover{background:var(--rose);color:white}.demo-note{font-size:11px;color:#896f79;background:#fff2f5;border:1px dashed #e9bdcc;border-radius:12px;padding:11px 14px;margin-top:18px}
+.promise{background:linear-gradient(120deg,#f9e3ea,#fff6f7);border-radius:28px;padding:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.promise-item{display:flex;gap:12px;align-items:flex-start}.promise-item .symbol{font-size:25px}.promise-item strong{display:block;font-size:14px}.promise-item p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}.about-art{min-height:280px;border-radius:28px;background:linear-gradient(135deg,#f7dce5,#fff4f6);display:grid;place-items:center;font-size:86px;position:relative;overflow:hidden}.about-art:before,.about-art:after{content:"";position:absolute;border:1px solid #fff9;width:240px;height:240px;border-radius:50%}.about-art:after{width:310px;height:310px}.about-copy h2{font-size:32px;line-height:1.4;margin:8px 0 14px}.about-copy p{color:var(--muted);font-size:14px}
+.faq{max-width:820px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:17px 4px}.faq summary{cursor:pointer;font-weight:700;font-size:14px}.faq details p{font-size:13px;color:var(--muted);margin-bottom:0}
+.newsletter{background:#8e3e5c;color:white;border-radius:26px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.newsletter h2{font-size:23px;margin:0}.newsletter p{margin:4px 0 0;color:#f7dfe8;font-size:12px}.newsletter .btn{background:#fff;color:#8e3e5c;white-space:nowrap}
+footer{margin-top:54px;background:#34252c;color:#fff4f7;padding:42px 0 20px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}.footer-brand{font-size:20px;font-weight:800}.footer-grid p,.footer-grid a{font-size:12px;color:#dfcbd2}.footer-grid h3{font-size:14px}.footer-links{display:grid;gap:7px}.socials{display:flex;gap:8px;margin-top:14px}.socials a{border:1px solid #684454;padding:7px 11px;border-radius:999px}.copyright{border-top:1px solid #60434f;margin-top:30px;padding-top:15px;text-align:center;color:#cdb6bf;font-size:11px}
+.cart-count{display:none;position:absolute;top:-3px;left:-3px;background:#8e3e5c;color:#fff;font-size:10px;min-width:18px;height:18px;border-radius:50%;place-items:center}.cart-wrap{position:relative}.cart-panel{position:fixed;z-index:40;top:0;left:0;width:min(420px,100%);height:100dvh;background:#fffaf8;box-shadow:0 0 0 100vmax #2a172055;transform:translateX(-110%);transition:transform .25s;padding:22px;display:flex;flex-direction:column}.cart-panel.open{transform:translateX(0)}.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}.cart-head h2{font-size:20px;margin:0}.close-cart{border:0;background:#fff0f4;border-radius:50%;width:38px;height:38px;cursor:pointer}.cart-items{overflow:auto;flex:1;padding:10px 0}.cart-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-row strong{font-size:13px}.cart-row small{display:block;color:var(--muted)}.qty{display:flex;align-items:center;gap:8px}.qty button{border:1px solid var(--line);background:white;border-radius:50%;width:27px;height:27px;cursor:pointer}.cart-total{border-top:1px solid var(--line);padding-top:15px}.total-line{display:flex;justify-content:space-between;font-weight:800;margin-bottom:12px}.cart-empty{text-align:center;color:var(--muted);padding:35px 0}.whatsapp-float{position:fixed;bottom:18px;left:18px;z-index:15;width:55px;height:55px;border-radius:50%;background:#25a85a;color:white;display:grid;place-items:center;font-size:25px;box-shadow:0 8px 22px #257d4938;border:3px solid #fff}
+.toast{position:fixed;bottom:88px;left:18px;background:#34252c;color:#fff;padding:10px 16px;border-radius:12px;font-size:12px;z-index:60;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.navlinks{gap:12px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:18px}.hero-art{min-height:370px}.bottle{width:100px;height:165px}.bottle.tall{height:205px;width:90px}.bottle.small{height:135px;width:80px}.categories{gap:12px}.category{padding:15px;gap:10px}.category-icon{width:54px;height:54px;font-size:25px}}
+@media(max-width:650px){.container{width:min(100% - 24px,1160px)}.topbar{font-size:11px}.nav{min-height:68px}.brand-mark{width:40px;height:40px}.brand-name{font-size:16px}.navlinks{display:none;position:absolute;top:68px;right:0;left:0;padding:18px 22px;background:#fffaf8;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:12px}.navlinks.open{display:flex}.menu-btn{display:grid}.nav-actions .btn{display:none}.hero{padding-top:24px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:310px;grid-row:1}.hero-copy{font-size:14px}.hero-grid>div:first-child{grid-row:2}.hero-stamp{top:15px;right:15px}.floating-note{bottom:14px;left:14px}.section{padding:36px 0}.section-head{align-items:start;flex-direction:column;gap:6px}.categories{grid-template-columns:1fr}.category{padding:14px}.product-visual{height:165px}.product-info{padding:11px}.product-info h3{font-size:13px}.product-info p{font-size:10px;min-height:36px}.price{font-size:12px}.add-btn{width:32px;height:32px}.promise{grid-template-columns:1fr;padding:22px;gap:18px}.about-grid{grid-template-columns:1fr;gap:22px}.about-art{min-height:220px}.about-copy h2{font-size:26px}.newsletter{padding:24px;align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr;gap:20px}.trust-row{gap:12px}.hero-buttons .btn{padding:11px 17px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+.uploaded-product-image{width:100%;height:100%;object-fit:contain;padding:12px;position:absolute;inset:0;background:linear-gradient(145deg,#fffaf9,#f3e8e8)}
+</style>
+</head>
+<body>
+<div class="topbar">🌸 بەخێربێیت بۆ Sara Beauty Shop — جوانییەکەت، تایبەتمەندیی تۆیە</div>
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home" aria-label="Sara Beauty Shop - سەرەتا"><span class="brand-mark">S</span><span class="brand-name">Sara Beauty Shop<small>BEAUTY • SCENT • YOU</small></span></a>
+  <nav class="navlinks" id="navlinks" aria-label="سەرەکی">
+   <a href="#home">سەرەتا</a><a href="#categories">بەشەکان</a><a href="#products">بەرهەمەکان</a><a href="#about">دەربارەمان</a><a href="#faq">پرسیارەکان</a>
+  </nav>
+  <div class="nav-actions">
+   <button class="icon-btn cart-wrap" id="openCart" aria-label="کردنەوەی سەبەتەی کڕین" title="سەبەتەی کڕین">🛍<span class="cart-count" id="cartCount">0</span></button>
+   <a class="btn" href="#products">ئێستا بازاڕ بکە</a>
+   <button class="icon-btn menu-btn" id="menuBtn" aria-label="کردنەوەی لیست">☰</button>
+  </div>
+ </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <span class="eyebrow">جوانی بە وردەکارییەوە دەست پێدەکات</span>
+   <h1>بۆنی خۆت، <span>شێوازی خۆت</span>، جوانیی خۆت.</h1>
+   <p class="hero-copy">لە عەترە تایبەتەکانەوە تا بەرهەمەکانی چاودێری پێست و میکاپ؛ هەموو ئەو شتانەی بۆ هەستکردن بە جوانی و متمانە بە خۆت پێویستتن، لە یەک شوێندا.</p>
+   <div class="hero-buttons"><a class="btn" href="#products">بەرهەمەکان ببینە <span>←</span></a><a class="btn btn-light" href="#categories">گەڕان بە پێی بەش</a></div>
+   <div class="trust-row"><span>♡ هەڵبژاردەی تایبەت</span><span>✦ خزمەتگوزاری بە ڕێزەوە</span><span>📍 کوردستان و عێراق</span></div>
+  </div>
+  <div class="hero-art" aria-label="وێنەی هونەری شوشەی عەتر">
+   <span class="hero-stamp">تایبەت بۆ تۆ ✨</span>
+   <div class="bottle-scene"><div class="bottle small">SARA<br>BEAUTY</div><div class="bottle tall">ROSE<br>ÉLÉGANCE</div><div class="bottle">PINK<br>VELVET</div></div>
+   <div class="floating-note"><strong>جوانی لە وردەکارییەکاندا دەردەکەوێت</strong><small>هەڵبژاردەی جوانی بۆ کەسانی تایبەت</small></div>
+  </div>
+ </div>
+</section>
+<section class="section" id="categories">
+ <div class="container">
+  <div class="section-head"><div><span class="eyebrow">دنیای جوانیی تۆ</span><h2>بەشەکانمان</h2></div><p>بەشی دڵخوازت هەڵبژێرە و بەرهەمەکان ببینە.</p></div>
+  <div class="categories">
+   <a class="category" href="#products" data-category-link="perfume"><div class="category-icon">🌷</div><div><h3>عەتر و بۆن</h3><p>بۆنێک کە نیشانەی خۆی جێدەهێڵێت</p></div><span class="arrow">←</span></a>
+   <a class="category" href="#products" data-category-link="skincare"><div class="category-icon">🧴</div><div><h3>چاودێری پێست</h3><p>هەنگاوە نەرمییەکان بۆ پێستێکی تەندروست</p></div><span class="arrow">←</span></a>
+   <a class="category" href="#products" data-category-link="makeup"><div class="category-icon">💄</div><div><h3>میکاپ</h3><p>ڕەنگ و شێواز بۆ دەربڕینی خۆت</p></div><span class="arrow">←</span></a>
+  </div>
+ </div>
+</section>
+<section class="section" id="products">
+ <div class="container">
+  <div class="section-head"><div><span class="eyebrow">هەڵبژاردەی Sara</span><h2>بەرهەمەکان</h2></div><p>بەرهەمێک بدۆزەرەوە کە لەگەڵ تۆ بگونجێت.</p></div>
+  <div class="toolbar">
+   <label class="search-wrap"><span class="search-symbol">⌕</span><input type="search" id="searchInput" placeholder="بەدوای ناوی بەرهەم بگەڕێ..." aria-label="گەڕان بەدوای بەرهەم"></label>
+   <div class="filters" role="group" aria-label="پاڵاوتنی بەرهەم"><button class="filter active" data-filter="all">هەمووی</button><button class="filter" data-filter="perfume">عەتر</button><button class="filter" data-filter="skincare">چاودێری پێست</button><button class="filter" data-filter="makeup">میکاپ</button></div>
+  </div>
+  <div class="product-grid" id="productGrid" aria-live="polite"></div>
+  <div class="demo-note">تێبینی: ئەم بەرهەمانە نموونەی دیزاینن و نرخەکان بۆ تاقیکردنەوەن؛ پێش بڵاوکردنەوە ناو، وێنە، نرخ و بەردەستبوونی بەرهەمە ڕاستەقینەکانت دابنێ. داواکاری واتساپیش پێویستی بە دانانی ژمارەی ڕاستەقینەی فرۆشگاکەت هەیە.</div>
+ </div>
+</section>
+<section class="section">
+ <div class="container">
+  <div class="promise">
+   <div class="promise-item"><span class="symbol">💗</span><div><strong>هەڵبژاردنی بە وردی</strong><p>بەرهەمەکان بە پێی پێویستی و دڵخوازی کڕیار هەڵبژێرە.</p></div></div>
+   <div class="promise-item"><span class="symbol">💬</span><div><strong>داواکردنی ئاسان</strong><p>داواکارییەکەت لە ڕێگەی واتساپەوە بنێرە و وردەکارییەکان پشتڕاست بکەرەوە.</p></div></div>
+   <div class="promise-item"><span class="symbol">🎀</span><div><strong>گرنگی بە وردەکاری</strong><p>هەموو هەنگاوێک لە هەڵبژاردنەوە تا گەیاندن بە گرنگییەوە دەگرین.</p></div></div>
+  </div>
+ </div>
+</section>
+<section class="section" id="about">
+ <div class="container about-grid">
+  <div class="about-art" aria-hidden="true">🌸🧴💗</div>
+  <div class="about-copy"><span class="eyebrow">چیرۆکی ئێمە</span><h2>جوانی تەنها بەرهەم نییە؛ هەستێکە.</h2><p>Sara Beauty Shop بۆ ئەوەیە یارمەتیت بدات بەرهەمەکانی جوانی بە شێوەیەکی ئاسان ببینیت و هەڵیبژێریت. لێرە دەتوانیت عەتر، بەرهەمەکانی چاودێری پێست و میکاپ لە یەک شوێندا بدۆزیتەوە.</p><p>پرسیارت هەیە؟ پێش داواکردن لە واتساپەوە پەیوەندیمان پێوە بکە بۆ زانیاریی زیاتر لەسەر بەرهەم، نرخ و گەیاندن.</p><a class="btn" href="#products">بەرهەمەکان ببینە</a></div>
+ </div>
+</section>
+<section class="section" id="faq">
+ <div class="container">
+  <div class="section-head" style="justify-content:center;text-align:center"><div><span class="eyebrow">یارمەتی بۆ تۆ</span><h2>پرسیارە باوەکان</h2><p>پێش داواکردن، ئەمانە بخوێنەوە.</p></div></div>
+  <div class="faq">
+   <details><summary>چۆن داواکارییەکەم بنێرم؟</summary><p>بەرهەمەکان زیاد بکە بۆ سەبەتە، پاشان دوگمەی ناردنی داواکاری بە واتساپ دابگرە. پەیامێکی ئامادە دەکرێتەوە بۆ ناردن.</p></details>
+   <details><summary>ئایا نرخەکان بە دیناری عێراقین؟</summary><p>بەڵێ، نرخەکان لە دیزاینەکەدا بە دیناری عێراقی پیشان دەدرێن. نرخە نموونەییەکان پێویستە بە نرخە ڕاستەقینەکان بگۆڕدرێن.</p></details>
+   <details><summary>گەیاندن بۆ کوێ دەکەن؟</summary><p>بازاڕی ئامانج کوردستان و عێراقە. وردەکاریی شار، کرێی گەیاندن و ماوەی گەیاندن لە کاتی پشتڕاستکردنەوەی داواکاری ڕوون دەکرێتەوە.</p></details>
+   <details><summary>چۆن دڵنیابم بەرهەمێک لەگەڵ پێستم دەگونجێت؟</summary><p>پێش کڕین، جۆری پێست و پێویستییەکانت لەگەڵ فرۆشیار باس بکە و لیستی پێکهاتەکان بخوێنەوە؛ ئەگەر پێستت هەستیارە، تاقیکردنەوەی ناوچەیەکی بچووک یارمەتیدەرە.</p></details>
+  </div>
+ </div>
+</section>
+<section class="section">
+ <div class="container"><div class="newsletter"><div><h2>هەڵبژاردەی جوانی، بە شێوەی تایبەت بۆ تۆ 🌷</h2><p>بەرهەمێکت لە دڵە؟ لە سەبەتەوە داواکارییەکەت بە واتساپ بنێرە.</p></div><a class="btn" href="#products">دەست پێ بکە ←</a></div></div>
+</section>
+</main>
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="footer-brand">Sara Beauty Shop 🌸</div><p>عەتر، چاودێری پێست و میکاپ؛ هەڵبژاردەی جوانی بۆ تۆ.</p><div class="socials"><a href="#products">بەرهەمەکان</a><a href="#about">دەربارەمان</a></div></div>
+   <div><h3>بەستەرە خێراکان</h3><div class="footer-links"><a href="#home">سەرەتا</a><a href="#categories">بەشەکان</a><a href="#products">فرۆشگا</a><a href="#faq">پرسیارەکان</a></div></div>
+   <div><h3>پەیوەندیمان پێوە بکە</h3><p>داواکاری و پرسیارەکان لە ڕێگەی واتساپەوە وەردەگیرێن.</p><a class="btn btn-light" id="footerWhatsapp" href="#products">پەیوەندی بە واتساپ</a><p>ئینستاگرام: @sarabeautyshop <small>(لینکی پەیجەکەت زیاد بکە)</small></p></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> Sara Beauty Shop. هەموو مافەکان پارێزراون.</div>
+ </div>
+</footer>
+<a class="whatsapp-float" id="whatsappFloat" href="#products" aria-label="پەیوەندی بە واتساپ" title="واتساپ">✆</a>
+<div class="toast" id="toast" role="status"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="سەبەتەی کڕین" aria-hidden="true">
+ <div class="cart-head"><h2>🛍 سەبەتەی کڕین</h2><button class="close-cart" id="closeCart" aria-label="داخستن">✕</button></div>
+ <div class="cart-items" id="cartItems"></div>
+ <div class="cart-total"><div class="total-line"><span>کۆی گشتی</span><span id="cartTotal">٠ د.ع</span></div><button class="btn" id="checkoutBtn" style="width:100%">ناردنی داواکاری بە واتساپ ↗</button><p style="font-size:10px;color:var(--muted);text-align:center">داواکارییەکەت پێش ناردن لە واتساپدا دەتوانیت بپشکنیت.</p></div>
+</aside>
+<script>
+const WHATSAPP_NUMBER = "9647744484966";
+let PRODUCTS = [];
+async function loadProducts(){
+  try{
+    const r = await fetch('products.json',{cache:'no-store'});
+    if(r.ok){const d=await r.json();if(Array.isArray(d))PRODUCTS=d.filter(p=>p&&p.id&&p.name&&Number(p.price)>0);}
+  }catch(e){console.warn(e)}
+}
+let activeFilter="all", cart={};
+const fmt=n=>new Intl.NumberFormat("ckb-IQ").format(n)+" د.ع";
+const grid=document.getElementById("productGrid");
+
+function escapeHTML(value){
+ return String(value??"").replace(/[&<>"']/g, ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+}
+function renderProducts(){
+ const q=document.getElementById("searchInput").value.trim().toLowerCase();
+ const items=PRODUCTS.filter(p=>(activeFilter==="all"||p.category===activeFilter)&&(!q||(p.name+" "+p.english+" "+p.type+" "+p.desc).toLowerCase().includes(q)));
+ grid.innerHTML=items.map(p=>`<article class="product-card">
+  <div class="product-visual ${p.category}"><span class="tag">${escapeHTML(p.tag||"تایبەت")}</span>${p.image?`<img class="uploaded-product-image" src="${p.image}" alt="${escapeHTML(p.name)}">`:`<div class="product-shape ${p.shape||"bottle"}">${p.shape==="jar"?"SARA":p.shape==="lip"?"":"SARA<br>BEAUTY"}</div>`}</div>
+  <div class="product-info"><span class="product-type">${escapeHTML(p.type)}</span><h3>${escapeHTML(p.name)}</h3><p>${escapeHTML(p.desc)}</p><div class="product-bottom"><span class="price">${fmt(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="زیادکردنی ${p.name} بۆ سەبەتە" title="زیادکردن بۆ سەبەتە">+</button></div></div>
+ </article>`).join("");
+ if(!items.length)grid.innerHTML='<p style="grid-column:1/-1;text-align:center;color:#78666e;padding:35px">هیچ بەرهەمێک نەدۆزرایەوە؛ وشەیەکی تر تاقی بکەرەوە.</p>';
+}
+function renderCart(){
+ const entries=Object.entries(cart).filter(([id,n])=>n>0);
+ const count=entries.reduce((s,[id,n])=>s+n,0);
+ const badge=document.getElementById("cartCount");badge.textContent=count;badge.style.display=count?"grid":"none";
+ const total=entries.reduce((s,[id,n])=>s+PRODUCTS.find(p=>p.id===id).price*n,0);
+ document.getElementById("cartTotal").textContent=fmt(total);
+ document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,n])=>{const p=PRODUCTS.find(x=>x.id===id);return `<div class="cart-row"><div><strong>${escapeHTML(p.name)}</strong><small>${fmt(p.price)} × ${n}</small></div><div class="qty"><button data-qty="${id}" data-delta="-1" aria-label="کەمکردنەوە">−</button><span>${n}</span><button data-qty="${id}" data-delta="1" aria-label="زیادکردن">+</button></div></div>`}).join(""):'<div class="cart-empty">🌸<p>سەبەتەکەت هێشتا بەتاڵە.</p><small>بەرهەمێک زیاد بکە بۆ دەستپێکردن.</small></div>';
+ document.getElementById("checkoutBtn").disabled=!entries.length;
+ document.getElementById("checkoutBtn").style.opacity=entries.length?"1":".5";
+}
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2300)}
+function openCart(){document.getElementById("cartPanel").classList.add("open");document.getElementById("cartPanel").setAttribute("aria-hidden","false")}
+function closeCart(){document.getElementById("cartPanel").classList.remove("open");document.getElementById("cartPanel").setAttribute("aria-hidden","true")}
+function validWhatsapp(){return /^964\d{9,12}$/.test(WHATSAPP_NUMBER)&&!WHATSAPP_NUMBER.includes("X")}
+function whatsappLink(message){if(!validWhatsapp()){toast("تکایە ژمارەی ڕاستەقینەی واتساپ لە کۆدی فایلەکە دابنێ.");return null}return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message)}
+function goWhatsapp(message){const url=whatsappLink(message);if(url)window.open(url,"_blank","noopener,noreferrer")}
+grid.addEventListener("click",e=>{const b=e.target.closest("[data-add]");if(!b)return;const id=b.dataset.add;cart[id]=(cart[id]||0)+1;renderCart();toast("بەرهەمەکە زیاد کرا بۆ سەبەتە 🌸")});
+document.getElementById("cartItems").addEventListener("click",e=>{const b=e.target.closest("[data-qty]");if(!b)return;const id=b.dataset.qty;cart[id]=(cart[id]||0)+Number(b.dataset.delta);if(cart[id]<=0)delete cart[id];renderCart()});
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{activeFilter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProducts()}));
+document.getElementById("searchInput").addEventListener("input",renderProducts);
+document.querySelectorAll("[data-category-link]").forEach(a=>a.addEventListener("click",()=>{activeFilter=a.dataset.categoryLink;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.filter===activeFilter));renderProducts()}));
+document.getElementById("openCart").addEventListener("click",openCart);document.getElementById("closeCart").addEventListener("click",closeCart);
+document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("navlinks").classList.toggle("open"));
+document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navlinks").classList.remove("open")));
+document.getElementById("checkoutBtn").addEventListener("click",()=>{
+ const entries=Object.entries(cart).filter(([id,n])=>n>0);if(!entries.length)return;
+ const lines=entries.map(([id,n])=>{const p=PRODUCTS.find(x=>x.id===id);return `• ${p.name} — ${n} دانە — ${fmt(p.price*n)}`});
+ const total=entries.reduce((s,[id,n])=>s+PRODUCTS.find(p=>p.id===id).price*n,0);
+ goWhatsapp("سڵاو Sara Beauty Shop 🌸\nدەمەوێت ئەم بەرهەمانە داوا بکەم:\n"+lines.join("\n")+"\n\nکۆی گشتی: "+fmt(total)+"\nتکایە نرخ و بەردەستبوون و کرێی گەیاندن بۆم پشتڕاست بکەنەوە.\nناو:\nشار و ناونیشان:");
+});
+document.getElementById("whatsappFloat").addEventListener("click",e=>{e.preventDefault();goWhatsapp("سڵاو Sara Beauty Shop 🌸، دەمەوێت زانیاری لەسەر بەرهەمەکان و گەیاندن بزانم.")});
+document.getElementById("footerWhatsapp").addEventListener("click",e=>{e.preventDefault();goWhatsapp("سڵاو Sara Beauty Shop 🌸، دەمەوێت پەیوەندیتان پێوە بکەم.")});
+document.getElementById("year").textContent=new Date().getFullYear();
+(async()=>{
+  await loadProducts();
+  renderProducts();
+  renderCart();
+})();
+</script>
+</body>
+</html>
