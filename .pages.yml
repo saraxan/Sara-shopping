@@ -32,9 +32,12 @@ content:
         label: وەسف
         type: text
       - name: price
-        label: نرخ (دینار)
+        label: نرخی سەرەکی (بۆ کاتێک قەبارە نییە)
         type: number
         required: true
+      - name: oldPrice
+        label: نرخی کۆن (بۆ داشکاندن)
+        type: number
       - name: shape
         label: شێواز
         type: select
@@ -45,8 +48,31 @@ content:
         label: تاگ
         type: string
       - name: image
-        label: وێنە
+        label: وێنەی سەرەکی
         type: image
+      - name: gallery
+        label: وێنەکانی تر (گەلەری)
+        type: list
+        field:
+          type: image
+      - name: variants
+        label: قەبارەکان و نرخەکان (بۆ نموونە: 35ml, 50ml)
+        type: list
+        fields:
+          - name: size
+            label: قەبارە (نموونە: 35ml)
+            type: string
+          - name: price
+            label: نرخی ئەم قەبارەیە
+            type: number
+          - name: oldPrice
+            label: نرخی کۆنی ئەم قەبارەیە (بۆ داشکاندن)
+            type: number
+          - name: image
+            label: وێنەی ئەم قەبارەیە (ئارەزوومەندانە)
+            type: image
       - name: ingredients
         label: پێکهاتەکان
         type: list
+        field:
+          type: string
