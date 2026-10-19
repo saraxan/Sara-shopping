@@ -51,7 +51,7 @@ content:
         label: وێنەی سەرەکی
         type: image
       - name: gallery
-        label: وێنەکانی تر (گەلەری)
+        label: وێنەکانی سەرەکی تر (گەلەری)
         type: list
         field:
           type: image
@@ -68,9 +68,11 @@ content:
           - name: oldPrice
             label: نرخی کۆنی ئەم قەبارەیە (بۆ داشکاندن)
             type: number
-          - name: image
-            label: وێنەی ئەم قەبارەیە (ئارەزوومەندانە)
-            type: image
+          - name: gallery
+            label: وێنەکانی تایبەت بەم قەبارەیە (چەند وێنەیەک)
+            type: list
+            field:
+              type: image
       - name: ingredients
         label: پێکهاتەکان
         type: list
