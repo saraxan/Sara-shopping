@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "products"
+    label: "بەرهەمەکان"
+    folder: ""
+    create: true
+    slug: "{{fields.id}}"
+    fields:
+      - { label: "کۆدی بەرهەم (id)", name: "id", widget: "string", hint: "دەبێت تایبەت بێت. نموونە: p5 یان m4" }
+      - { label: "ناوی بەرهەم", name: "name", widget: "string" }
+      - { label: "ناوی ئینگلیزی", name: "english", widget: "string", required: false }
+      - { label: "جۆر", name: "category", widget: "select", options: ["perfume", "skincare", "makeup"] }
+      - { label: "جۆری بەرهەم (بۆ پیشاندان)", name: "type", widget: "string", hint: "بۆ نموونە: عەتر، چاودێری پێست" }
+      - { label: "وەسف", name: "desc", widget: "text" }
+      - { label: "نرخ (دیناری عێراقی)", name: "price", widget: "number" }
+      - { label: "شێواز", name: "shape", widget: "select", options: ["bottle", "jar", "lip"], default: "bottle" }
+      - { label: "تاگ", name: "tag", widget: "string", default: "نوێ" }
+      - { label: "وێنە", name: "image", widget: "image" }
