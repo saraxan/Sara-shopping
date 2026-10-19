@@ -190,7 +190,7 @@ const WHATSAPP_NUMBER = "9647744484966";
 let PRODUCTS = [];
 let CURRENT = null;
 let qty = 1;
-let selectedVariantIndex = 0; // بۆ هەڵبژاردنی قەبارە
+let selectedVariantIndex = 0;
 
 const fmt = n => new Intl.NumberFormat("ckb-IQ").format(n) + " د.ع";
 const escapeHTML = v => String(v??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -242,7 +242,6 @@ function renderDetail(){
   // --- 2. دروستکردنی قەبارەکان (ئەگەر هەبوون) ---
   let variantsHTML = "";
   if (CURRENT.variants && CURRENT.variants.length > 0) {
-    // ئەگەر قەبارە هەبوو
     variantsHTML = `
       <div class="variants-title">قەبارە هەڵبژێرە:</div>
       <div class="variants-grid" id="variantsGrid">
@@ -256,10 +255,8 @@ function renderDetail(){
         `).join("")}
       </div>
     `;
-    // نیشاندانی نرخی قەبارەی یەکەم
     setTimeout(() => selectVariant(0), 100);
   } else {
-    // ئەگەر قەبارە نەبوو (وەک بەرهەمە کۆنەکان)
     let oldPriceHTML = CURRENT.oldPrice ? `<span class="prod-old-price">${fmt(CURRENT.oldPrice)}</span>` : '';
     let discountHTML = (CURRENT.oldPrice && CURRENT.oldPrice > CURRENT.price) ? 
       `<span class="discount-badge">${Math.round((1 - CURRENT.price/CURRENT.oldPrice) * 100)}%-</span>` : '';
@@ -298,13 +295,11 @@ function selectVariant(index) {
   selectedVariantIndex = index;
   const v = CURRENT.variants[index];
   
-  // گۆڕینی دوگمە چالاکەکان
   document.querySelectorAll('.size-btn').forEach((btn, i) => {
     if(i === index) btn.classList.add('active');
     else btn.classList.remove('active');
   });
 
-  // گۆڕینی نرخ و وێنە
   let area = document.getElementById('standardPriceArea');
   let oldPriceHTML = v.oldPrice ? `<span class="prod-old-price">${fmt(v.oldPrice)}</span>` : '';
   let discountHTML = (v.oldPrice && v.oldPrice > v.price) ? 
@@ -341,9 +336,17 @@ document.getElementById("qtyPlus").addEventListener("click", () => { qty++; docu
 
 document.getElementById("addToCartBtn").addEventListener("click", () => {
   if(!CURRENT) return;
+  
   let cart = {};
   try{ cart = JSON.parse(localStorage.getItem("saraCart") || "{}"); }catch(e){}
-  cart[CURRENT.id] = (cart[CURRENT.id] || 0) + qty;
+  
+  let cartItemId = CURRENT.id;
+  if (CURRENT.variants && CURRENT.variants.length > 0) {
+    const selectedSize = CURRENT.variants[selectedVariantIndex].size;
+    cartItemId = CURRENT.id + "_" + selectedSize;
+  }
+
+  cart[cartItemId] = (cart[cartItemId] || 0) + qty;
   localStorage.setItem("saraCart", JSON.stringify(cart));
   updateCartBadge();
   toast(qty + " دانە زیادکرا بۆ سەبەتە 🌸");
