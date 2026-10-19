@@ -32,11 +32,11 @@ content:
         label: وەسف
         type: text
       - name: price
-        label: نرخی سەرەکی (بۆ کاتێک قەبارە نییە)
+        label: نرخی سەرەکی
         type: number
         required: true
       - name: oldPrice
-        label: نرخی کۆن (بۆ داشکاندن)
+        label: نرخی کۆن
         type: number
       - name: shape
         label: شێواز
@@ -56,7 +56,7 @@ content:
         field:
           type: image
       - name: variants
-        label: قەبارەکان و نرخەکان (بۆ نموونە: 35ml, 50ml)
+        label: قەبارەکان و نرخەکان (35ml, 50ml...)
         type: list
         fields:
           - name: size
@@ -66,10 +66,10 @@ content:
             label: نرخی ئەم قەبارەیە
             type: number
           - name: oldPrice
-            label: نرخی کۆنی ئەم قەبارەیە (بۆ داشکاندن)
+            label: نرخی کۆنی ئەم قەبارەیە
             type: number
           - name: gallery
-            label: وێنەکانی تایبەت بەم قەبارەیە (چەند وێنەیەک)
+            label: وێنەکانی تایبەت بەم قەبارەیە
             type: list
             field:
               type: image
