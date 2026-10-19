@@ -7,6 +7,7 @@ content:
     label: بەرهەمەکان
     type: file
     path: products.json
+    list: true
     fields:
       - name: id
         label: کۆدی بەرهەم (id)
