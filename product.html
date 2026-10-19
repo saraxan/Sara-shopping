@@ -191,6 +191,7 @@ let PRODUCTS = [];
 let CURRENT = null;
 let qty = 1;
 let selectedVariantIndex = 0;
+let cart = {};
 
 const fmt = n => new Intl.NumberFormat("ckb-IQ").format(n) + " د.ع";
 const escapeHTML = v => String(v??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -217,18 +218,13 @@ function renderDetail(){
   document.title = CURRENT.name + " | Sara Beauty Shop";
   document.getElementById("actionBar").style.display = "flex";
 
-  // --- 1. دروستکردنی گەلەری وێنەکان ---
+  // 1. Gallery
   let images = [];
-  if (CURRENT.gallery && CURRENT.gallery.length > 0) {
-    images = CURRENT.gallery;
-  } else if (CURRENT.image) {
-    images = [CURRENT.image];
-  }
+  if (CURRENT.gallery && CURRENT.gallery.length > 0) images = CURRENT.gallery;
+  else if (CURRENT.image) images = [CURRENT.image];
 
   let mainImgHTML = `<div class="placeholder">📦</div>`;
-  if (images.length > 0) {
-    mainImgHTML = `<img id="mainImg" src="${escapeHTML(images[0])}" alt="${escapeHTML(CURRENT.name)}">`;
-  }
+  if (images.length > 0) mainImgHTML = `<img id="mainImg" src="${escapeHTML(images[0])}" alt="${escapeHTML(CURRENT.name)}">`;
 
   let thumbsHTML = "";
   if (images.length > 1) {
@@ -239,7 +235,7 @@ function renderDetail(){
     ).join("") + `</div>`;
   }
 
-  // --- 2. دروستکردنی قەبارەکان (ئەگەر هەبوون) ---
+  // 2. Variants
   let variantsHTML = "";
   if (CURRENT.variants && CURRENT.variants.length > 0) {
     variantsHTML = `
@@ -277,14 +273,11 @@ function renderDetail(){
       ${escapeHTML(CURRENT.name)}
       ${CURRENT.english ? `<small>${escapeHTML(CURRENT.english)}</small>` : ""}
     </h1>
-    
     ${variantsHTML}
-    
     <div class="prod-desc">${escapeHTML(CURRENT.desc || "هیچ وەسفێک نەنووسراوە.")}</div>
   `;
 }
 
-// --- فەنکشنەکانی وێنە و قەبارە ---
 function changeMainImg(el, src) {
   document.getElementById("mainImg").src = src;
   document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
@@ -312,10 +305,7 @@ function selectVariant(index) {
       ${discountHTML}
     `;
   }
-  
-  if (v.image) {
-    document.getElementById("mainImg").src = v.image;
-  }
+  if (v.image) document.getElementById("mainImg").src = v.image;
 }
 
 function toast(msg){
@@ -325,20 +315,69 @@ function toast(msg){
 }
 
 function updateCartBadge(){
-  let cart = {};
-  try{ cart = JSON.parse(localStorage.getItem("saraCart") || "{}"); }catch(e){}
   const count = Object.values(cart).reduce((s,n) => s + n, 0);
   document.getElementById("cartCount").textContent = count;
 }
 
+function renderCart(){
+  const entries = Object.entries(cart).filter(([,n]) => n > 0);
+  const total = entries.reduce((s,[id,n]) => {
+    let price = 0;
+    if (id.includes("_")) {
+      const baseId = id.split("_")[0];
+      const size = id.split("_")[1];
+      const p = PRODUCTS.find(x => x.id === baseId);
+      if(p && p.variants) {
+        const v = p.variants.find(v => v.size === size);
+        if(v) price = v.price;
+      }
+    } else {
+      const p = PRODUCTS.find(x => x.id === id);
+      if(p) price = p.price;
+    }
+    return s + (price * n);
+  }, 0);
+  
+  document.getElementById("cartTotal").textContent = fmt(total);
+
+  const box = document.getElementById("cartItems");
+  if(!entries.length){
+    box.innerHTML = '<div style="text-align:center;color:#999;padding:30px 0;font-size:13px">سەبەتەکەت بەتاڵە</div>';
+    return;
+  }
+  box.innerHTML = entries.map(([id,n]) => {
+    let name = "";
+    const baseId = id.split("_")[0];
+    const size = id.split("_")[1] || "";
+    const p = PRODUCTS.find(x => x.id === baseId);
+    if(p) name = p.name + (size ? ` (${size})` : "");
+
+    return `<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)">
+      <div>
+        <div style="font-size:13px;font-weight:600">${name}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button onclick="changeQty('${id}', -1)" style="width:26px;height:26px;border-radius:50%;background:#f0f0f0">−</button>
+        <span style="font-size:13px">${n}</span>
+        <button onclick="changeQty('${id}', 1)" style="width:26px;height:26px;border-radius:50%;background:#f0f0f0">+</button>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function changeQty(id, delta) {
+  cart[id] = (cart[id] || 0) + delta;
+  if(cart[id] <= 0) delete cart[id];
+  updateCartBadge();
+  renderCart();
+}
+
+// Events
 document.getElementById("qtyMinus").addEventListener("click", () => { if(qty > 1){ qty--; document.getElementById("qtyInput").value = qty; } });
 document.getElementById("qtyPlus").addEventListener("click", () => { qty++; document.getElementById("qtyInput").value = qty; });
 
 document.getElementById("addToCartBtn").addEventListener("click", () => {
   if(!CURRENT) return;
-  
-  let cart = {};
-  try{ cart = JSON.parse(localStorage.getItem("saraCart") || "{}"); }catch(e){}
   
   let cartItemId = CURRENT.id;
   if (CURRENT.variants && CURRENT.variants.length > 0) {
@@ -347,9 +386,41 @@ document.getElementById("addToCartBtn").addEventListener("click", () => {
   }
 
   cart[cartItemId] = (cart[cartItemId] || 0) + qty;
-  localStorage.setItem("saraCart", JSON.stringify(cart));
   updateCartBadge();
+  renderCart();
   toast(qty + " دانە زیادکرا بۆ سەبەتە 🌸");
+});
+
+// Open & Close Cart
+document.getElementById("openCart").addEventListener("click", () => document.getElementById("cartPanel").style.transform = "translateX(0)");
+document.getElementById("closeCart").addEventListener("click", () => document.getElementById("cartPanel").style.transform = "translateX(-110%)");
+
+// Checkout
+document.getElementById("checkoutBtn").addEventListener("click", () => {
+  const entries = Object.entries(cart).filter(([,n]) => n > 0);
+  if(!entries.length) return;
+  
+  let lines = [];
+  let total = 0;
+
+  entries.forEach(([id,n]) => {
+    const baseId = id.split("_")[0];
+    const size = id.split("_")[1] || "";
+    const p = PRODUCTS.find(x => x.id === baseId);
+    
+    if(p) {
+      let price = p.price;
+      if(size && p.variants) {
+        const v = p.variants.find(v => v.size === size);
+        if(v) price = v.price;
+      }
+      let name = p.name + (size ? ` (${size})` : "");
+      lines.push(`• ${name} — ${n} دانە — ${fmt(price * n)}`);
+      total += (price * n);
+    }
+  });
+
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("سڵاو Sara Beauty Shop 🌸\nدەمەوێت ئەم بەرهەمانە داوا بکەم:\n" + lines.join("\n") + "\n\nکۆی گشتی: " + fmt(total) + "\nناو:\nشار و ناونیشان:"), "_blank");
 });
 
 document.getElementById("waFloat").addEventListener("click", e => {
