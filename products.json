@@ -22,17 +22,18 @@
     "shape": "jar",
     "tag": "شێدارکەرەوە",
     "image": ""
-  },{
-  "id": "p4",
-  "name": "مینی سێتی کیراستاس",
-  "english": "Kérastase Mini Iconics Trio Hair Ritual",
-  "category": "skincare",
-  "type": "سێتی چاودێری قژ",
-  "desc": "بەهێزکردن و خۆراک پێدان ، رەونەقدارکردنی قژ .",
-  "price": 144000,
-  "shape": "bottle",
-  "tag": "نوێ",
-      "image": "IMG_20261015_225702.jpg",
+  },
+  {
+    "id": "p4",
+    "name": "مینی سێتی کیراستاس",
+    "english": "Kérastase Mini Iconics Trio Hair Ritual",
+    "category": "skincare",
+    "type": "سێتی چاودێری قژ",
+    "desc": "بەهێزکردن و خۆراک پێدان ، ڕەونەقدارکردنی قژ.",
+    "price": 144000,
+    "shape": "bottle",
+    "tag": "نوێ",
+    "image": "IMG_20261015_225702.jpg",
     "ingredients": [
       "شامپۆی پاککەر (Genesis) – پێشگیری لە بەریزبوونەوە و تێکچوون",
       "ماسک (Nutritive) – نەرمی و لەمەڕیی قژ",
@@ -40,4 +41,3 @@
     ]
   }
 ]
-
