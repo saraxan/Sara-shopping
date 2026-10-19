@@ -1,0 +1,51 @@
+media:
+  input: images
+  output: images
+
+content:
+  - name: products
+    label: بەرهەمەکان
+    type: file
+    path: products.json
+    fields:
+      - name: id
+        label: کۆدی بەرهەم (id)
+        type: string
+        required: true
+      - name: name
+        label: ناوی بەرهەم
+        type: string
+        required: true
+      - name: english
+        label: ناوی ئینگلیزی
+        type: string
+      - name: category
+        label: جۆر
+        type: select
+        options:
+          values: [perfume, skincare, makeup]
+      - name: type
+        label: جۆری بەرهەم
+        type: string
+      - name: desc
+        label: وەسف
+        type: text
+      - name: price
+        label: نرخ (دینار)
+        type: number
+        required: true
+      - name: shape
+        label: شێواز
+        type: select
+        options:
+          values: [bottle, jar, lip]
+        default: bottle
+      - name: tag
+        label: تاگ
+        type: string
+      - name: image
+        label: وێنە
+        type: image
+      - name: ingredients
+        label: پێکهاتەکان
+        type: list
