@@ -3,385 +3,230 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fdf2f4">
+<meta name="theme-color" content="#ffffff">
 <title>وردەکاری بەرهەم | Sara Beauty Shop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --rose:#b76e79;--rose-dark:#8e4a57;--rose-light:#f7e4e8;
-  --pink-soft:#fdf2f4;--cream:#fdfaf8;--ink:#2e2226;--muted:#8a7a80;
-  --line:#f0e2e6;--gold:#c9a86a;--white:#fff;
-  --shadow-sm:0 4px 14px rgba(183,110,121,.08);
-  --shadow:0 10px 34px rgba(183,110,121,.12);
-  --radius:16px;--radius-lg:24px;
+  --teal:#1d5c5b; /* ڕەنگی سەوزی تاریک بۆ دوگمەکان و نرخ */
+  --ink:#222;
+  --muted:#666;
+  --bg:#ffffff;
+  --line:#eaeaea;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--cream);color:var(--ink);font-family:'Noto Kufi Arabic',Tahoma,sans-serif;line-height:1.8;font-size:15px;-webkit-font-smoothing:antialiased}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Noto Kufi Arabic',Tahoma,sans-serif;
+  line-height:1.8;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 img{max-width:100%;display:block}
-.container{width:min(1240px,calc(100% - 32px));margin:auto}
 
-/* TOP BAR */
-.topbar{background:linear-gradient(90deg,#b76e79,#c98a92,#b76e79);color:#fff;font-size:12.5px;padding:9px 16px}
-.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:14px;max-width:1240px;margin:auto;flex-wrap:wrap}
-.topbar a{display:inline-flex;align-items:center;gap:6px;opacity:.95}
-
-/* HEADER */
-header{position:sticky;top:0;z-index:50;background:rgba(253,250,248,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{min-height:88px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
-.nav-left,.nav-right{display:flex;align-items:center;gap:8px}
-.nav-right{justify-content:flex-end}
-.icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:.2s;position:relative}
-.icon-btn:hover{background:var(--rose-light);color:var(--rose-dark)}
-.icon-btn svg{width:22px;height:22px;stroke-width:1.6}
-.cart-count{position:absolute;top:6px;left:6px;background:var(--rose);color:#fff;font-size:10px;min-width:18px;height:18px;border-radius:50%;display:none;place-items:center;font-weight:600}
-.brand{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
-.brand-logo{font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:var(--rose-dark);letter-spacing:.5px;line-height:1;position:relative}
-.brand-logo:before{content:"♛";position:absolute;top:-2px;left:-22px;font-size:18px;color:var(--gold);transform:rotate(-15deg)}
-.brand-sub{font-family:'Playfair Display',serif;font-size:11px;letter-spacing:3px;color:var(--rose);text-transform:uppercase}
-.mainnav{border-top:1px solid var(--line);background:var(--cream)}
-.mainnav-inner{display:flex;justify-content:center;align-items:center;gap:34px;padding:14px 0;font-size:14px;font-weight:500;color:var(--ink)}
-.mainnav a{position:relative;padding:4px 0;transition:.2s}
-.mainnav a:hover{color:var(--rose-dark)}
-
-/* BREADCRUMB */
-.crumb{padding:22px 0 0;font-size:13px;color:var(--muted)}
-.crumb a:hover{color:var(--rose-dark)}
-
-/* PRODUCT DETAIL */
-.product-detail{
-  display:grid;grid-template-columns:1.1fr 1fr;gap:50px;
-  padding:30px 0 60px;align-items:start;
+/* ============ HEADER ============ */
+header{
+  position:sticky;top:0;z-index:50;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  padding:12px 0;
 }
-.gallery{position:sticky;top:120px}
-.gallery-main{
-  aspect-ratio:1/1;border-radius:var(--radius-lg);
-  background:linear-gradient(145deg,#fbf1f3,#f5e6e8 58%,#e5ebe3);
-  overflow:hidden;display:grid;place-items:center;
-  position:relative;border:1px solid var(--line);
+.container{width:min(800px,calc(100% - 24px));margin:auto}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
 }
-.gallery-main img{width:100%;height:100%;object-fit:cover}
-.gallery-main .product-shape{width:130px;height:220px;font-size:16px;padding-top:40px}
-.gallery-main .product-shape.jar{width:160px;height:120px;font-size:14px;padding-top:24px}
-.gallery-main .product-shape.lip{width:60px;height:180px;font-size:0}
-.gallery-thumbs{display:flex;gap:10px;margin-top:14px;overflow-x:auto;padding-bottom:4px}
-.gallery-thumbs::-webkit-scrollbar{display:none}
-.thumb{
-  width:74px;height:74px;border-radius:12px;flex-shrink:0;
-  border:2px solid transparent;overflow:hidden;background:#f5e6e8;
-  display:grid;place-items:center;transition:.2s;
+.brand{font-size:22px;font-weight:700;letter-spacing:-.5px}
+.nav-icons{display:flex;align-items:center;gap:16px}
+.icon-btn{position:relative;display:flex;flex-direction:column;align-items:center;font-size:11px;gap:2px}
+.icon-btn svg{width:22px;height:22px;stroke-width:1.8}
+.cart-count{
+  position:absolute;top:-4px;right:-6px;
+  background:var(--teal);color:#fff;
+  font-size:9px;font-weight:700;
+  min-width:16px;height:16px;border-radius:50%;
+  display:grid;place-items:center;
 }
-.thumb.active,.thumb:hover{border-color:var(--rose)}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.thumb .product-shape{width:30px;height:50px;font-size:0;padding-top:10px}
-.thumb .product-shape:before{width:12px;height:8px;top:-8px}
 
-.detail-info{padding-top:6px}
-.detail-brand{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:2px;color:var(--rose);text-transform:uppercase;margin-bottom:8px}
-.detail-info h1{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:600;line-height:1.35;color:var(--ink);margin-bottom:10px}
-.detail-info h1 small{display:block;font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:400;color:var(--muted);margin-top:6px}
-.rating{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:18px}
-.rating .stars{color:var(--gold);font-size:15px}
-.price-row{
-  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
-  padding:16px 20px;background:var(--pink-soft);border-radius:14px;
-  margin-bottom:20px;
+/* ============ PRODUCT DETAIL (NEW CLEAN DESIGN) ============ */
+.product-wrap{
+  padding: 20px 0 100px; /* بۆشایی لە خوارەوە بۆ دوگمەکە */
 }
-.price-row .price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--rose-dark)}
-.price-row .price small{font-size:13px;color:var(--muted);font-weight:400;font-family:'Noto Kufi Arabic'}
-.stock-badge{background:var(--rose);color:#fff;font-size:11px;padding:4px 12px;border-radius:999px}
-
-.detail-desc{color:var(--muted);font-size:14.5px;line-height:2;margin-bottom:24px}
-
-/* INGREDIENTS */
-.ingredients{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:22px}
-.ingredients h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--ink)}
-.ingredients ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.ingredients li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);line-height:1.7}
-.ingredients li:before{content:"✓";color:var(--rose);font-weight:700;flex-shrink:0}
-
-/* QUANTITY + CTA */
-.qty-row{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
-.qty-box{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
-.qty-box button{width:44px;height:44px;font-size:20px;color:var(--rose-dark);transition:.2s}
-.qty-box button:hover{background:var(--rose-light)}
-.qty-box input{width:56px;height:44px;text-align:center;border:0;outline:none;font-family:inherit;font-size:15px;font-weight:600;color:var(--ink);background:transparent}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.cta-row .btn{flex:1;min-width:180px;padding:15px 24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:999px;font-size:14px;font-weight:600;transition:.25s;font-family:inherit;border:0;cursor:pointer}
-.btn-primary{background:var(--rose-dark);color:#fff}
-.btn-primary:hover{background:#6f3742;transform:translateY(-2px);box-shadow:0 12px 28px rgba(142,74,87,.28)}
-.btn-wa{background:#25a85a;color:#fff}
-.btn-wa:hover{background:#1e8c4a;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--rose-dark);border:1.5px solid var(--rose)}
-.btn-outline:hover{background:var(--rose-light)}
-.btn svg{width:18px;height:18px}
-
-/* PROMISE STRIP */
-.promise-strip{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
-  margin-top:20px;padding-top:22px;border-top:1px solid var(--line);
+.main-image{
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 24px;
 }
-.promise-item{text-align:center;font-size:11.5px;color:var(--muted)}
-.promise-item svg{width:22px;height:22px;color:var(--rose);margin:0 auto 6px;display:block;stroke-width:1.6}
+.main-image img{
+  width: 100%;height: 100%;object-fit: cover;
+}
+.main-image .placeholder{
+  width: 100%;height: 100%;display:grid;place-items:center;font-size:50px;color:#ccc;
+}
 
-/* TABS */
-.tabs{margin-top:70px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
-.tabs-head{display:flex;border-bottom:1px solid var(--line);overflow-x:auto}
-.tabs-head::-webkit-scrollbar{display:none}
-.tab-btn{padding:16px 26px;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:.2s}
-.tab-btn.active{color:var(--rose-dark);border-bottom-color:var(--rose-dark);background:var(--pink-soft)}
-.tab-panel{padding:28px 26px;display:none;font-size:14px;color:var(--muted);line-height:2}
-.tab-panel.active{display:block}
-.tab-panel h4{color:var(--ink);font-size:15px;margin-bottom:10px}
+.prod-title{
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.prod-title small{
+  display: block;
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 4px;
+}
 
-/* RELATED */
-.related{margin-top:70px}
-.related h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;text-align:center;margin-bottom:8px}
-.related h2:after{content:"";display:block;width:50px;height:2px;background:var(--gold);margin:14px auto 0}
-.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
-.rel-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s}
-.rel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.rel-visual{aspect-ratio:1/1;background:linear-gradient(145deg,#fbf1f3,#f5e6e8);display:grid;place-items:center;overflow:hidden;position:relative}
-.rel-visual img{width:100%;height:100%;object-fit:cover}
-.rel-info{padding:12px 14px}
-.rel-info h4{font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.5}
-.rel-info .price{font-family:'Playfair Display',serif;color:var(--rose-dark);font-weight:700;font-size:14px}
+.prod-price{
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
 
-/* FOOTER */
-footer{background:#2a1f24;color:#f7e4e8;padding:60px 0 24px;margin-top:80px}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
-.footer-brand{font-family:'Playfair Display',serif;font-size:26px;color:#fff;margin-bottom:14px;letter-spacing:.5px}
-.footer-grid p,.footer-grid a{font-size:13px;color:#d4bcc4;line-height:2}
-.footer-grid h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:16px;font-family:'Playfair Display',serif}
-.footer-links{display:flex;flex-direction:column;gap:8px}
-.footer-links a:hover{color:#fff}
-.copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;text-align:center;font-size:12px;color:#a98e97}
+.prod-desc{
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 2;
+  margin-bottom: 30px;
+  white-space: pre-wrap; /* بۆ پاراستنی دێڕەکان (Enter) لە نووسینەکەتدا */
+}
 
-/* WHATSAPP FLOAT */
-.whatsapp-float{position:fixed;bottom:22px;left:22px;width:56px;height:56px;border-radius:50%;background:#25a85a;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(37,125,73,.35);z-index:60;transition:.25s}
-.whatsapp-float:hover{transform:scale(1.08)}
-.whatsapp-float svg{width:26px;height:26px}
+/* ============ BOTTOM ACTION BAR ============ */
+.bottom-bar{
+  position: fixed;
+  bottom: 0;left: 0;right: 0;
+  background: #fff;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 90;
+  box-shadow: 0 -4px 12px rgba(0,0,0,.03);
+}
+.qty-box{
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  height: 48px;
+  overflow: hidden;
+}
+.qty-box button{
+  width: 40px;height: 100%;
+  font-size: 18px;color: var(--ink);
+  display: grid;place-items: center;
+}
+.qty-box input{
+  width: 40px;height: 100%;
+  text-align: center;border: 0;outline: 0;
+  font-family: inherit;font-size: 15px;font-weight: 600;
+  background: transparent;
+}
+.btn-add{
+  flex: 1;
+  height: 48px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;align-items: center;justify-content: center;gap: 8px;
+  transition: .2s;
+}
+.btn-add:hover{background: #154645}
 
-/* TOAST */
-.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(10px);background:#2a1f24;color:#fff;padding:12px 22px;border-radius:12px;font-size:13px;z-index:70;opacity:0;pointer-events:none;transition:.25s;white-space:nowrap}
+/* ============ FLOATING WA ============ */
+.wa-float{
+  position:fixed;bottom:80px;left:20px; /* بەرزکراوەتەوە بۆ ئەوەی لەگەڵ دوگمەکە نەیەت */
+  width:50px;height:50px;border-radius:50%;
+  background:#25a85a;color:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(37,168,90,.4);
+  z-index:60;
+}
+.wa-float svg{width:24px;height:24px}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(10px);
+  background:#222;color:#fff;
+  padding:10px 20px;border-radius:10px;
+  font-size:12px;z-index:70;
+  opacity:0;pointer-events:none;transition:.3s;
+  white-space: nowrap;
+}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-/* RESPONSIVE */
-@media(max-width:960px){
-  .product-detail{grid-template-columns:1fr;gap:30px}
-  .gallery{position:static}
-  .related-grid{grid-template-columns:repeat(2,1fr)}
-  .promise-strip{grid-template-columns:repeat(2,1fr);gap:18px}
-}
-@media(max-width:820px){
-  .nav{grid-template-columns:auto 1fr auto;min-height:74px;gap:10px}
-  .brand-logo{font-size:26px}
-  .brand-sub{font-size:9px;letter-spacing:2px}
-  .mainnav-inner{gap:18px;font-size:13px;padding:12px 0;overflow-x:auto}
-  .mainnav-inner::-webkit-scrollbar{display:none}
-  .mainnav-inner a{white-space:nowrap}
-  .footer-grid{grid-template-columns:1fr;gap:30px}
-  .detail-info h1{font-size:24px}
-  .price-row .price{font-size:24px}
-}
-@media(max-width:480px){
-  .container{width:calc(100% - 22px)}
-  .brand-logo{font-size:22px}
-  .brand-logo:before{font-size:14px;left:-16px}
-  .related-grid{grid-template-columns:1fr 1fr;gap:12px}
-  .cta-row .btn{min-width:100%}
-  .tabs-head .tab-btn{padding:14px 18px;font-size:13px}
-  .tab-panel{padding:22px 18px}
+@media(min-width:600px){
+  .prod-title{font-size: 26px}
+  .prod-price{font-size: 30px}
 }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <a href="#" id="waTop">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <span>داواکردن بە واتساپ</span>
-    </a>
-    <span>گەیاندن بۆ هەموو کوردستان و عێراق</span>
-  </div>
-</div>
-
 <!-- HEADER -->
 <header>
-  <div class="container">
-    <div class="nav">
-      <div class="nav-left">
-        <a href="index.html" class="icon-btn" aria-label="گەڕانەوە">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        </a>
-      </div>
-      <a href="index.html" class="brand">
-        <div class="brand-logo">Sara</div>
-        <div class="brand-sub">Beauty Shop</div>
-      </a>
-      <div class="nav-right">
-        <a href="index.html#products" class="icon-btn" aria-label="فرۆشگا">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span class="cart-count" id="cartCount">0</span>
-        </a>
-      </div>
-    </div>
+  <div class="container nav">
+    <a href="index.html" class="icon-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
+    <a href="index.html" class="brand">Sara Beauty Shop</a>
+    <button class="icon-btn" id="openCart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
   </div>
-  <nav class="mainnav">
-    <div class="container mainnav-inner">
-      <a href="index.html">سەرەتا</a>
-      <a href="index.html#products">عەتر</a>
-      <a href="index.html#products">چاودێری پێست</a>
-      <a href="index.html#products">میکاپ</a>
-      <a href="index.html#contact">پەیوەندی</a>
-    </div>
-  </nav>
 </header>
 
-<main class="container">
-
-  <!-- BREADCRUMB -->
-  <div class="crumb">
-    <a href="index.html">سەرەتا</a> / <a href="index.html#products">بەرهەمەکان</a> / <span id="crumbName">...</span>
-  </div>
-
-  <!-- PRODUCT DETAIL -->
-  <div class="product-detail" id="detailWrap">
-    <div class="gallery">
-      <div class="gallery-main" id="galleryMain">
-        <div class="product-shape">SARA<br>BEAUTY</div>
-      </div>
-      <div class="gallery-thumbs" id="galleryThumbs"></div>
-    </div>
-
-    <div class="detail-info">
-      <div class="detail-brand" id="detailBrand">SARA BEAUTY</div>
-      <h1 id="detailName">...</h1>
-      <div class="rating">
-        <span class="stars">★★★★★</span>
-        <span>(5.0)</span>
-        <span>·</span>
-        <span id="detailReviews">1 بەردەمەنی پێشتر</span>
-      </div>
-
-      <div class="price-row">
-        <div class="price" id="detailPrice">٠ <small>د.ع</small></div>
-        <span class="stock-badge">تەنها لە سەرەتا</span>
-      </div>
-
-      <p class="detail-desc" id="detailDesc">...</p>
-
-      <div class="ingredients" id="ingredientsBox" style="display:none">
-        <h3>پێکهاتەکە:</h3>
-        <ul id="ingredientsList"></ul>
-      </div>
-
-      <div class="qty-row">
-        <div class="qty-box">
-          <button type="button" id="qtyMinus">−</button>
-          <input type="number" id="qtyInput" value="1" min="1" readonly>
-          <button type="button" id="qtyPlus">+</button>
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <button class="btn btn-primary" id="addToCartBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          زیادکردن بۆ سەبەتە
-        </button>
-        <button class="btn btn-wa" id="waOrderBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          داواکردن لە ڕێگەی واتساپ
-        </button>
-      </div>
-
-      <div class="promise-strip">
-        <div class="promise-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 7h-9M14 17H5M5 7l-3 6h6L5 7zM19 17l-3 6h6l-3-6z"/></svg>
-          گەیاندن بە خێرایی
-        </div>
-        <div class="promise-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          پێشگیری لە دەمار
-        </div>
-        <div class="promise-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          بەرهەمی ڕەسەن
-        </div>
-        <div class="promise-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          پشتگیری ٢٤/٧
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TABS -->
-  <div class="tabs">
-    <div class="tabs-head">
-      <button class="tab-btn active" data-tab="desc">وەسف</button>
-      <button class="tab-btn" data-tab="usage">ڕێنمایی بەکارهێنان</button>
-      <button class="tab-btn" data-tab="reviews">بەردەمەنییەکان</button>
-    </div>
-    <div class="tab-panel active" id="tab-desc">
-      <h4>کورتەیەک لەسەر بەرهەمەکە</h4>
-      <p id="tabDescText">...</p>
-    </div>
-    <div class="tab-panel" id="tab-usage">
-      <h4>ڕێنمایی بەکارهێنان</h4>
-      <p>بۆ دەستکەوتنی باشترین ئەنجام، بەرهەمەکە بەپێی ڕێنمایی سەر پاکەتەکە بەکاربهێنە. پێش بەکارهێنان، دەموچاو و دەست پاک بکەرەوە. لە شوێنی وشک و سارد هەڵیبگرە.</p>
-    </div>
-    <div class="tab-panel" id="tab-reviews">
-      <h4>بەردەمەنییەکان</h4>
-      <p>هێشتا هیچ بەردەمەنییەک نییە. دەتوانیت یەکەم کەس بیت کە بەردەمەنی دەنووسێت.</p>
-    </div>
-  </div>
-
-  <!-- RELATED -->
-  <section class="related">
-    <h2>بەرهەمە پەیوەستەکان</h2>
-    <div class="related-grid" id="relatedGrid"></div>
-  </section>
-
+<main class="container product-wrap" id="productWrap">
+  <!-- Loading State -->
+  <div style="text-align:center;padding:50px 0;color:var(--muted)">بەرهەم بار دەکرێت...</div>
 </main>
 
-<!-- FOOTER -->
-<footer id="contact">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">Sara Beauty Shop</div>
-        <p>عەتر، چاودێری پێست و میکاپ؛ هەڵبژاردەی جوانی بۆ تۆ.</p>
-      </div>
-      <div>
-        <h4>بەستەرە خێراکان</h4>
-        <div class="footer-links">
-          <a href="index.html">سەرەتا</a>
-          <a href="index.html#products">فرۆشگا</a>
-          <a href="index.html#contact">پەیوەندی</a>
-        </div>
-      </div>
-      <div>
-        <h4>پەیوەندیمان پێوە بکە</h4>
-        <a href="#" class="btn btn-primary" id="waFoot" style="margin-top:8px;padding:11px 22px;font-size:13px">واتساپ</a>
-      </div>
-    </div>
-    <div class="copyright">© <span id="year"></span> Sara Beauty Shop</div>
+<!-- BOTTOM ACTION BAR -->
+<div class="bottom-bar" id="actionBar" style="display:none">
+  <div class="qty-box">
+    <button type="button" id="qtyMinus">−</button>
+    <input type="number" id="qtyInput" value="1" min="1" readonly>
+    <button type="button" id="qtyPlus">+</button>
   </div>
-</footer>
+  <button class="btn-add" id="addToCartBtn">زیادکردن بۆ سەبەتە</button>
+</div>
 
-<a href="#" class="whatsapp-float" id="waFloat">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+<!-- FLOATING WA -->
+<a href="#" class="wa-float" id="waFloat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
 </a>
 
 <div class="toast" id="toast"></div>
+
+<!-- CART PANEL (کورتکراوە) -->
+<aside id="cartPanel" style="position:fixed;top:0;left:0;width:min(400px,100%);height:100dvh;background:#fff;box-shadow:0 0 0 100vmax rgba(0,0,0,.4);transform:translateX(-110%);transition:transform .3s;padding:20px;display:flex;flex-direction:column;z-index:100">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px">
+    <h3 style="font-size:18px">سەبەتەی کڕین</h3>
+    <button id="closeCart" style="font-size:20px;color:#777">✕</button>
+  </div>
+  <div id="cartItems" style="flex:1;overflow:auto;padding-bottom:16px"></div>
+  <div style="border-top:1px solid var(--line);padding-top:16px">
+    <div style="display:flex;justify-content:space-between;font-weight:700;margin-bottom:14px;font-size:15px">
+      <span>کۆی گشتی</span>
+      <span id="cartTotal" style="color:var(--teal)">٠ د.ع</span>
+    </div>
+    <button class="btn-add" id="checkoutBtn" style="width:100%">ناردنی داواکاری بە واتساپ</button>
+  </div>
+</aside>
 
 <script>
 const WHATSAPP_NUMBER = "9647744484966";
@@ -391,13 +236,6 @@ let qty = 1;
 
 const fmt = n => new Intl.NumberFormat("ckb-IQ").format(n) + " د.ع";
 const escapeHTML = v => String(v??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-
-function shapeClass(s){ return s === "jar" ? "jar" : s === "lip" ? "lip" : ""; }
-function shapeHTML(p){
-  if(p.shape === "jar") return "SARA";
-  if(p.shape === "lip") return "";
-  return "SARA<br>BEAUTY";
-}
 
 async function loadProducts(){
   try{
@@ -414,78 +252,47 @@ function getId(){
 function renderDetail(){
   const id = getId();
   CURRENT = PRODUCTS.find(p => p.id === id);
+  const wrap = document.getElementById("productWrap");
 
   if(!CURRENT){
-    document.getElementById("detailWrap").innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:80px 0;color:var(--muted)">بەرهەمەکە نەدۆزرایەوە 🌸<br><br><a href="index.html#products" class="btn btn-primary">گەڕانەوە بۆ بەرهەمەکان</a></div>';
+    wrap.innerHTML = '<div style="text-align:center;padding:80px 0;color:var(--muted)">بەرهەمەکە نەدۆزرایەوە 🌸<br><br><a href="index.html" style="color:var(--teal);font-weight:bold">گەڕانەوە بۆ ماڵەوە</a></div>';
     return;
   }
 
   document.title = CURRENT.name + " | Sara Beauty Shop";
-  document.getElementById("crumbName").textContent = CURRENT.name;
-  document.getElementById("detailBrand").textContent = (CURRENT.english || "SARA BEAUTY").toUpperCase();
-  document.getElementById("detailName").innerHTML = escapeHTML(CURRENT.name) + (CURRENT.english ? `<small>${escapeHTML(CURRENT.english)}</small>` : "");
-  document.getElementById("detailPrice").innerHTML = fmt(CURRENT.price).replace(" د.ع","") + ' <small>د.ع</small>';
-  document.getElementById("detailDesc").textContent = CURRENT.desc || "";
-  document.getElementById("tabDescText").textContent = CURRENT.desc || "";
+  document.getElementById("actionBar").style.display = "flex";
 
-  /* Gallery */
-  const main = document.getElementById("galleryMain");
-  const thumbs = document.getElementById("galleryThumbs");
-  if(CURRENT.image){
-    main.innerHTML = `<img src="${escapeHTML(CURRENT.image)}" alt="${escapeHTML(CURRENT.name)}">`;
-    thumbs.innerHTML = `<div class="thumb active"><img src="${escapeHTML(CURRENT.image)}" alt=""></div>`;
-  } else {
-    main.innerHTML = `<div class="product-shape ${shapeClass(CURRENT.shape)}">${shapeHTML(CURRENT)}</div>`;
-    thumbs.innerHTML = "";
-  }
+  const visual = CURRENT.image 
+    ? `<img src="${escapeHTML(CURRENT.image)}" alt="${escapeHTML(CURRENT.name)}">` 
+    : `<div class="placeholder">📦</div>`;
 
-  /* Ingredients */
-  const ing = CURRENT.ingredients || [];
-  if(Array.isArray(ing) && ing.length){
-    document.getElementById("ingredientsBox").style.display = "block";
-    document.getElementById("ingredientsList").innerHTML = ing.map(i => `<li>${escapeHTML(i)}</li>`).join("");
-  }
-
-  renderRelated();
-}
-
-function renderRelated(){
-  const grid = document.getElementById("relatedGrid");
-  const others = PRODUCTS.filter(p => p.id !== CURRENT.id).slice(0, 4);
-  if(!others.length){ grid.innerHTML = ""; return; }
-  grid.innerHTML = others.map(p => {
-    const visual = p.image
-      ? `<img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" loading="lazy">`
-      : `<div class="product-shape ${shapeClass(p.shape)}" style="width:50px;height:80px;font-size:0;padding-top:14px">${shapeHTML(p)}</div>`;
-    return `<a class="rel-card" href="product.html?id=${encodeURIComponent(p.id)}">
-      <div class="rel-visual">${visual}</div>
-      <div class="rel-info">
-        <h4>${escapeHTML(p.name)}</h4>
-        <div class="price">${fmt(p.price)}</div>
-      </div>
-    </a>`;
-  }).join("");
+  wrap.innerHTML = `
+    <div class="main-image">
+      ${visual}
+    </div>
+    <h1 class="prod-title">
+      ${escapeHTML(CURRENT.name)}
+      ${CURRENT.english ? `<small>${escapeHTML(CURRENT.english)}</small>` : ""}
+    </h1>
+    <div class="prod-price">${fmt(CURRENT.price)}</div>
+    
+    <div class="prod-desc">
+      ${escapeHTML(CURRENT.desc || "هیچ وەسفێک بۆ ئەم بەرهەمە نەنووسراوە.")}
+    </div>
+  `;
 }
 
 function toast(msg){
   const el = document.getElementById("toast");
-  el.textContent = msg;
-  el.classList.add("show");
-  clearTimeout(el._t);
-  el._t = setTimeout(() => el.classList.remove("show"), 2200);
-}
-
-function goWhatsapp(msg){
-  if(!/^964\d{9,12}$/.test(WHATSAPP_NUMBER)){ toast("ژمارەی واتساپ ڕێک بخە"); return; }
-  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+  el.textContent = msg; el.classList.add("show");
+  setTimeout(() => el.classList.remove("show"), 2000);
 }
 
 function updateCartBadge(){
   let cart = {};
   try{ cart = JSON.parse(localStorage.getItem("saraCart") || "{}"); }catch(e){}
   const count = Object.values(cart).reduce((s,n) => s + n, 0);
-  const badge = document.getElementById("cartCount");
-  if(badge){ badge.textContent = count; badge.style.display = count ? "grid" : "none"; }
+  document.getElementById("cartCount").textContent = count;
 }
 
 /* Events */
@@ -502,29 +309,12 @@ document.getElementById("addToCartBtn").addEventListener("click", () => {
   toast(qty + " دانە زیادکرا بۆ سەبەتە 🌸");
 });
 
-document.getElementById("waOrderBtn").addEventListener("click", () => {
-  if(!CURRENT) return;
-  goWhatsapp("سڵاو Sara Beauty Shop 🌸\nدەمەوێت ئەم بەرهەمە داوا بکەم:\n• " + CURRENT.name + " — " + qty + " دانە — " + fmt(CURRENT.price * qty) + "\n\nناو:\nشار و ناونیشان:");
+document.getElementById("waFloat").addEventListener("click", e => {
+  e.preventDefault();
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("سڵاو، دەمەوێت لەسەر ئەم بەرهەمە بپرسم: " + CURRENT.name), "_blank");
 });
 
-document.querySelectorAll(".tab-btn").forEach(b => {
-  b.addEventListener("click", () => {
-    document.querySelectorAll(".tab-btn").forEach(x => x.classList.toggle("active", x === b));
-    document.querySelectorAll(".tab-panel").forEach(x => x.classList.toggle("active", x.id === "tab-" + b.dataset.tab));
-  });
-});
-
-["waTop","waFoot","waFloat"].forEach(id => {
-  const el = document.getElementById(id);
-  if(el) el.addEventListener("click", e => {
-    e.preventDefault();
-    goWhatsapp("سڵاو Sara Beauty Shop 🌸");
-  });
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-/* Init */
+/* INIT */
 (async () => {
   await loadProducts();
   renderDetail();
