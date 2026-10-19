@@ -51,25 +51,25 @@ content:
         label: وێنەی سەرەکی
         type: image
       - name: gallery
-        label: وێنەکانی سەرەکی تر (گەلەری)
+        label: گەلەری
         type: list
         field:
           type: image
       - name: variants
-        label: قەبارەکان و نرخەکان (35ml, 50ml...)
+        label: قەبارەکان
         type: list
         fields:
           - name: size
-            label: قەبارە (نموونە: 35ml)
+            label: قەبارە (35ml...)
             type: string
           - name: price
-            label: نرخی ئەم قەبارەیە
+            label: نرخ
             type: number
           - name: oldPrice
-            label: نرخی کۆنی ئەم قەبارەیە
+            label: نرخی کۆن
             type: number
           - name: gallery
-            label: وێنەکانی تایبەت بەم قەبارەیە
+            label: وێنەکانی قەبارەکە
             type: list
             field:
               type: image
