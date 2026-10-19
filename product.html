@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#FAF8F5">
 <title>وردەکاری بەرهەم | Sara Beauty Shop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,18 +32,16 @@ img{max-width:100%;display:block}
 /* ============ HEADER ============ */
 header{
   position:sticky;top:0;z-index:50;
-  background:#fff;
+  background:var(--bg);
   border-bottom:1px solid var(--line);
   padding:12px 0;
 }
 .container{width:min(800px,calc(100% - 24px));margin:auto}
-.nav{
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-}
-.brand{font-size:22px;font-weight:700;letter-spacing:-.5px}
-.nav-icons{display:flex;align-items:center;gap:16px}
-.icon-btn{position:relative;display:flex;flex-direction:column;align-items:center;font-size:11px;gap:2px}
-.icon-btn svg{width:22px;height:22px;stroke-width:1.8}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.brand{font-size:22px;font-weight:700;letter-spacing:-.5px;color:var(--ink);}
+.nav-icons{display:flex;align-items:center;gap:16px;}
+.icon-btn{position:relative;display:flex;flex-direction:column;align-items:center;font-size:11px;gap:2px;}
+.icon-btn svg{width:22px;height:22px;stroke-width:1.8;}
 .cart-count{
   position:absolute;top:-4px;right:-6px;
   background:var(--teal);color:#fff;
@@ -52,103 +50,64 @@ header{
   display:grid;place-items:center;
 }
 
-/* ============ PRODUCT DETAIL (NEW CLEAN DESIGN) ============ */
-.product-wrap{
-  padding: 20px 0 100px; /* بۆشایی لە خوارەوە بۆ دوگمەکە */
-}
+/* ============ PRODUCT DETAIL ============ */
+.product-wrap{padding: 20px 0 100px;}
 .main-image{
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #f5f5f5;
-  margin-bottom: 24px;
+  width: 100%;aspect-ratio: 1/1;
+  border-radius: 20px;overflow: hidden;
+  background: #f5f5f5;margin-bottom: 24px;
 }
-.main-image img{
-  width: 100%;height: 100%;object-fit: cover;
-}
-.main-image .placeholder{
-  width: 100%;height: 100%;display:grid;place-items:center;font-size:50px;color:#ccc;
-}
+.main-image img{width: 100%;height: 100%;object-fit: cover;}
+.main-image .placeholder{width: 100%;height: 100%;display:grid;place-items:center;font-size:50px;color:#ccc;}
 
 .prod-title{
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 10px;
-  line-height: 1.4;
+  font-size: 22px;font-weight: 700;
+  color: var(--ink);margin-bottom: 10px;line-height: 1.4;
 }
 .prod-title small{
-  display: block;
-  font-size: 15px;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 4px;
+  display: block;font-size: 15px;
+  color: var(--muted);font-weight: 400;margin-top: 4px;
 }
-
 .prod-price{
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--teal);
-  margin-bottom: 24px;
+  font-size: 26px;font-weight: 700;
+  color: var(--teal);margin-bottom: 24px;
 }
-
 .prod-desc{
-  font-size: 15px;
-  color: var(--ink);
-  line-height: 2;
-  margin-bottom: 30px;
-  white-space: pre-wrap; /* بۆ پاراستنی دێڕەکان (Enter) لە نووسینەکەتدا */
+  font-size: 15px;color: var(--ink);
+  line-height: 2;margin-bottom: 30px;
+  white-space: pre-wrap;
 }
 
 /* ============ BOTTOM ACTION BAR ============ */
 .bottom-bar{
-  position: fixed;
-  bottom: 0;left: 0;right: 0;
-  background: #fff;
-  padding: 12px 16px;
+  position: fixed;bottom: 0;left: 0;right: 0;
+  background: var(--bg);padding: 12px 16px;
   border-top: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 90;
-  box-shadow: 0 -4px 12px rgba(0,0,0,.03);
+  display: flex;align-items: center;gap: 12px;
+  z-index: 90;box-shadow: 0 -4px 12px rgba(0,0,0,.03);
 }
 .qty-box{
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 999px;
-  height: 48px;
-  overflow: hidden;
+  display: flex;align-items: center;
+  border: 1px solid #ccc;border-radius: 999px;
+  height: 48px;overflow: hidden;
 }
-.qty-box button{
-  width: 40px;height: 100%;
-  font-size: 18px;color: var(--ink);
-  display: grid;place-items: center;
-}
+.qty-box button{width: 40px;height: 100%;font-size: 18px;color: var(--ink);display: grid;place-items: center;}
 .qty-box input{
-  width: 40px;height: 100%;
-  text-align: center;border: 0;outline: 0;
-  font-family: inherit;font-size: 15px;font-weight: 600;
-  background: transparent;
+  width: 40px;height: 100%;text-align: center;
+  border: 0;outline: 0;font-family: inherit;
+  font-size: 15px;font-weight: 600;background: transparent;
 }
 .btn-add{
-  flex: 1;
-  height: 48px;
-  background: var(--teal);
-  color: #fff;
-  border-radius: 999px;
-  font-size: 16px;
-  font-weight: 600;
+  flex: 1;height: 48px;background: var(--teal);color: #fff;
+  border-radius: 999px;font-size: 16px;font-weight: 600;
   display: flex;align-items: center;justify-content: center;gap: 8px;
   transition: .2s;
 }
-.btn-add:hover{background: #154645}
+.btn-add:hover{background: #9C616B;}
 
 /* ============ FLOATING WA ============ */
 .wa-float{
-  position:fixed;bottom:80px;left:20px; /* بەرزکراوەتەوە بۆ ئەوەی لەگەڵ دوگمەکە نەیەت */
+  position:fixed;bottom:80px;left:20px;
   width:50px;height:50px;border-radius:50%;
   background:#25a85a;color:#fff;
   display:grid;place-items:center;
@@ -157,20 +116,16 @@ header{
 }
 .wa-float svg{width:24px;height:24px}
 
-/* ============ TOAST ============ */
 .toast{
   position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(10px);
-  background:#222;color:#fff;
-  padding:10px 20px;border-radius:10px;
-  font-size:12px;z-index:70;
-  opacity:0;pointer-events:none;transition:.3s;
-  white-space: nowrap;
+  background:#222;color:#fff;padding:10px 20px;border-radius:10px;
+  font-size:12px;z-index:70;opacity:0;pointer-events:none;transition:.3s;white-space: nowrap;
 }
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
 @media(min-width:600px){
-  .prod-title{font-size: 26px}
-  .prod-price{font-size: 30px}
+  .prod-title{font-size: 26px;}
+  .prod-price{font-size: 30px;}
 }
 </style>
 </head>
@@ -191,7 +146,6 @@ header{
 </header>
 
 <main class="container product-wrap" id="productWrap">
-  <!-- Loading State -->
   <div style="text-align:center;padding:50px 0;color:var(--muted)">بەرهەم بار دەکرێت...</div>
 </main>
 
@@ -212,8 +166,8 @@ header{
 
 <div class="toast" id="toast"></div>
 
-<!-- CART PANEL (کورتکراوە) -->
-<aside id="cartPanel" style="position:fixed;top:0;left:0;width:min(400px,100%);height:100dvh;background:#fff;box-shadow:0 0 0 100vmax rgba(0,0,0,.4);transform:translateX(-110%);transition:transform .3s;padding:20px;display:flex;flex-direction:column;z-index:100">
+<!-- CART PANEL (کێشەی کاڵبوون لێرە چارەسەر کراوە) -->
+<aside id="cartPanel" style="position:fixed;top:0;left:0;width:min(400px,100%);height:100dvh;background:#fff;box-shadow:-5px 0 15px rgba(0,0,0,0.1);transform:translateX(-110%);transition:transform .3s;padding:20px;display:flex;flex-direction:column;z-index:100">
   <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px">
     <h3 style="font-size:18px">سەبەتەی کڕین</h3>
     <button id="closeCart" style="font-size:20px;color:#777">✕</button>
