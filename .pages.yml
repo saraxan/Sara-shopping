@@ -51,30 +51,28 @@ content:
         label: وێنەی سەرەکی
         type: image
       - name: gallery
-        label: گەلەری (چەند وێنەیەک)
+        label: گەلەری (وێنەی زیاتر)
         type: list
         field:
           type: image
       - name: variants
-        label: قەبارەکان
+        label: قەبارەکان و نرخەکان
         type: list
-        field:
-          type: object
-          fields:
-            - name: size
-              label: قەبارە (نموونە: 35ml)
-              type: string
-            - name: price
-              label: نرخ
-              type: number
-            - name: oldPrice
-              label: نرخی کۆن
-              type: number
-            - name: gallery
-              label: وێنەکانی ئەم قەبارەیە
-              type: list
-              field:
-                type: image
+        fields:
+          - name: size
+            label: قەبارە (نموونە: 35ml)
+            type: string
+          - name: price
+            label: نرخ
+            type: number
+          - name: oldPrice
+            label: نرخی کۆن
+            type: number
+          - name: gallery
+            label: وێنەکانی ئەم قەبارەیە
+            type: list
+            field:
+              type: image
       - name: ingredients
         label: پێکهاتەکان
         type: list
