@@ -1,32 +1,37 @@
-{
-  "items": [
-    {
-      "id": "p5",
-      "name": "جیفنچی - ئێل ئەنتەردیت ئێلیکسیر",
-      "english": "Givenchy L'Interdit Elixir",
-      "category": "perfume",
-      "type": "بۆن",
-      "desc": "عەترێکی لوکس، گەرم و سەرنجڕاکێشە کە تێکەڵەیەکی قووڵە لە گیلاسی ڕەش، گوڵی سپی و ڤانیلا.",
-      "price": 155000,
-      "oldPrice": 180000,
-      "shape": "bottle",
-      "tag": "نوێ",
-      "image": "images/file_000000007ff082119f10b8d4d6297357.png",
-      "variants": [
-        {
-          "size": "35ml",
-          "price": 155000,
-          "oldPrice": 180000,
-          "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
-        },
-        {
-          "size": "50ml",
-          "price": 210000,
-          "oldPrice": 250000,
-          "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
-        }
-      ],
-      "ingredients": ["پێکهاتەی عەتری Givenchy L'Interdit"]
-    }
-  ]
-}
+[
+  {
+    "id": "p5",
+    "name": "جیفنچی - ئێل ئەنتەردیت ئێلیکسیر",
+    "english": "Givenchy L'Interdit Elixir",
+    "category": "perfume",
+    "type": "بۆن",
+    "desc": "عەترێکی لوکس، گەرم و سەرنجڕاکێشە کە تێکەڵەیەکی قووڵە لە گیلاسی ڕەش، گوڵی سپی و ڤانیلا.",
+    "price": 155000,
+    "oldPrice": 180000,
+    "shape": "bottle",
+    "tag": "نوێ",
+    "image": "images/file_000000007ff082119f10b8d4d6297357.png",
+    "gallery": [],
+    "variants": [
+      {
+        "size": "35ml",
+        "price": 155000,
+        "oldPrice": 180000,
+        "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
+      },
+      {
+        "size": "50ml",
+        "price": 210000,
+        "oldPrice": 250000,
+        "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
+      },
+      {
+        "size": "80ml",
+        "price": 280000,
+        "oldPrice": 320000,
+        "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
+      }
+    ],
+    "ingredients": ["پێکهاتەی عەتری Givenchy L'Interdit"]
+  }
+]
