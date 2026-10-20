@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: saraxan/Sara-shopping
   branch: main
+  base_url: https://sveltia-cms-auth.workers.dev
 
 media_folder: "images"
 public_folder: "/images"
@@ -12,13 +14,23 @@ collections:
     create: true
     slug: "{{fields.id}}"
     fields:
-      - { label: "کۆدی بەرهەم (id)", name: "id", widget: "string", hint: "دەبێت تایبەت بێت. نموونە: p5 یان m4" }
+      - { label: "کۆدی بەرهەم (id)", name: "id", widget: "string" }
       - { label: "ناوی بەرهەم", name: "name", widget: "string" }
       - { label: "ناوی ئینگلیزی", name: "english", widget: "string", required: false }
       - { label: "جۆر", name: "category", widget: "select", options: ["perfume", "skincare", "makeup"] }
-      - { label: "جۆری بەرهەم (بۆ پیشاندان)", name: "type", widget: "string", hint: "بۆ نموونە: عەتر، چاودێری پێست" }
+      - { label: "جۆری بەرهەم", name: "type", widget: "string" }
       - { label: "وەسف", name: "desc", widget: "text" }
-      - { label: "نرخ (دیناری عێراقی)", name: "price", widget: "number" }
-      - { label: "شێواز", name: "shape", widget: "select", options: ["bottle", "jar", "lip"], default: "bottle" }
-      - { label: "تاگ", name: "tag", widget: "string", default: "نوێ" }
-      - { label: "وێنە", name: "image", widget: "image" }
+      - { label: "نرخی سەرەکی", name: "price", widget: "number" }
+      - { label: "نرخی کۆن", name: "oldPrice", widget: "number", required: false }
+      - { label: "شێواز", name: "shape", widget: "select", options: ["bottle", "jar", "lip"] }
+      - { label: "تاگ", name: "tag", widget: "string" }
+      - { label: "وێنەی سەرەکی", name: "image", widget: "image", required: false }
+      - label: "قەبارەکان"
+        name: "variants"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "قەبارە (35ml)", name: "size", widget: "string" }
+          - { label: "نرخ", name: "price", widget: "number" }
+          - { label: "نرخی کۆن", name: "oldPrice", widget: "number" }
+          - { label: "وێنەکانی ئەم قەبارەیە", name: "gallery", widget: "image", required: false }
