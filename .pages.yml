@@ -12,11 +12,9 @@ content:
       - name: id
         label: کۆدی بەرهەم (id)
         type: string
-        required: true
       - name: name
         label: ناوی بەرهەم
         type: string
-        required: true
       - name: english
         label: ناوی ئینگلیزی
         type: string
@@ -32,9 +30,8 @@ content:
         label: وەسف
         type: text
       - name: price
-        label: نرخی سەرەکی
+        label: نرخ
         type: number
-        required: true
       - name: oldPrice
         label: نرخی کۆن
         type: number
@@ -43,38 +40,17 @@ content:
         type: select
         options:
           values: [bottle, jar, lip]
-        default: bottle
       - name: tag
         label: تاگ
         type: string
       - name: image
         label: وێنەی سەرەکی
-        type: image
+        type: string
       - name: gallery
-        label: گەلەری (وێنەی زیاتر)
-        type: list
-        field:
-          type: image
+        label: گەلەری
+        type: string
+        list: true
       - name: variants
-        label: قەبارەکان و نرخەکان
-        type: list
-        fields:
-          - name: size
-            label: قەبارە (نموونە: 35ml)
-            type: string
-          - name: price
-            label: نرخ
-            type: number
-          - name: oldPrice
-            label: نرخی کۆن
-            type: number
-          - name: gallery
-            label: وێنەکانی ئەم قەبارەیە
-            type: list
-            field:
-              type: image
-      - name: ingredients
-        label: پێکهاتەکان
-        type: list
-        field:
-          type: string
+        label: قەبارەکان
+        type: string
+        list: true
