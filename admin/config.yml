@@ -10,27 +10,33 @@ public_folder: "/images"
 collections:
   - name: "products"
     label: "بەرهەمەکان"
-    folder: ""
-    create: true
-    slug: "{{fields.id}}"
-    fields:
-      - { label: "کۆدی بەرهەم (id)", name: "id", widget: "string" }
-      - { label: "ناوی بەرهەم", name: "name", widget: "string" }
-      - { label: "ناوی ئینگلیزی", name: "english", widget: "string", required: false }
-      - { label: "جۆر", name: "category", widget: "select", options: ["perfume", "skincare", "makeup"] }
-      - { label: "جۆری بەرهەم", name: "type", widget: "string" }
-      - { label: "وەسف", name: "desc", widget: "text" }
-      - { label: "نرخی سەرەکی", name: "price", widget: "number" }
-      - { label: "نرخی کۆن", name: "oldPrice", widget: "number", required: false }
-      - { label: "شێواز", name: "shape", widget: "select", options: ["bottle", "jar", "lip"] }
-      - { label: "تاگ", name: "tag", widget: "string" }
-      - { label: "وێنەی سەرەکی", name: "image", widget: "image", required: false }
-      - label: "قەبارەکان"
-        name: "variants"
-        widget: "list"
-        required: false
+    files:
+      - name: "products_file"
+        label: "لیستی بەرهەمەکان"
+        file: "products.json"
         fields:
-          - { label: "قەبارە (35ml)", name: "size", widget: "string" }
-          - { label: "نرخ", name: "price", widget: "number" }
-          - { label: "نرخی کۆن", name: "oldPrice", widget: "number" }
-          - { label: "وێنەکانی ئەم قەبارەیە", name: "gallery", widget: "image", required: false }
+          - name: "items"
+            label: "بەرهەمەکان"
+            widget: "list"
+            fields:
+              - { label: "کۆدی بەرهەم (id)", name: "id", widget: "string" }
+              - { label: "ناوی بەرهەم", name: "name", widget: "string" }
+              - { label: "ناوی ئینگلیزی", name: "english", widget: "string", required: false }
+              - { label: "جۆر", name: "category", widget: "select", options: ["perfume", "skincare", "makeup"] }
+              - { label: "جۆری بەرهەم", name: "type", widget: "string" }
+              - { label: "وەسف", name: "desc", widget: "text" }
+              - { label: "نرخی سەرەکی", name: "price", widget: "number" }
+              - { label: "نرخی کۆن", name: "oldPrice", widget: "number", required: false }
+              - { label: "شێواز", name: "shape", widget: "select", options: ["bottle", "jar", "lip"] }
+              - { label: "تاگ", name: "tag", widget: "string" }
+              - { label: "وێنەی سەرەکی", name: "image", widget: "image", required: false }
+              - label: "قەبارەکان"
+                name: "variants"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "قەبارە", name: "size", widget: "string" }
+                  - { label: "نرخ", name: "price", widget: "number" }
+                  - { label: "نرخی کۆن", name: "oldPrice", widget: "number", required: false }
+                  - { label: "وێنەکان", name: "gallery", widget: "image", required: false }
+              - { label: "پێکهاتەکان", name: "ingredients", widget: "list", required: false, field: { label: "پێکهاتە", name: "item", widget: "string" } }
