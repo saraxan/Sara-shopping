@@ -2,7 +2,7 @@ backend:
   name: github
   repo: saraxan/Sara-shopping
   branch: main
-  base_url: https://sveltia-cms-auth.workers.dev
+  base_url: https://sveltia-cms-auth.sara-baxtyar2001.workers.dev
 
 media_folder: "images"
 public_folder: "/images"
