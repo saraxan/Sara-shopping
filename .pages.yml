@@ -52,12 +52,12 @@ content:
         type: image
       - name: gallery
         label: گەلەری (وێنەی زیاتر)
-        type: image
-        list: true
+        type: list
+        field:
+          type: image
       - name: variants
         label: قەبارەکان و نرخەکان
-        type: object
-        list: true
+        type: list
         fields:
           - name: size
             label: قەبارە (نموونە: 35ml)
@@ -70,9 +70,11 @@ content:
             type: number
           - name: gallery
             label: وێنەکانی ئەم قەبارەیە
-            type: image
-            list: true
+            type: list
+            field:
+              type: image
       - name: ingredients
         label: پێکهاتەکان
-        type: string
-        list: true
+        type: list
+        field:
+          type: string
