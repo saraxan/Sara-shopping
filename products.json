@@ -1,61 +1,11 @@
 [
   {
-    "id": "p1",
-    "name": "ڕۆز ڤێلڤێت",
-    "english": "Rose Velvet",
-    "category": "perfume",
-    "type": "عەتر",
-    "desc": "بۆنێکی گوڵاوی و نازدار بۆ کاتە تایبەتەکان.",
-    "price": 85000,
-    "oldPrice": 100000,
-    "shape": "bottle",
-    "tag": "هەڵبژاردەی جوان",
-    "image": "",
-    "gallery": [],
-    "variants": [],
-    "ingredients": []
-  },
-  {
-    "id": "s1",
-    "name": "مینی سێتی چاودێری قژ",
-    "english": "Hydrating Face Cream",
-    "category": "skincare",
-    "type": "چاودێری پێست",
-    "desc": "کرێمی شێدارکەرەوە بۆ ڕوتینی ڕۆژانەی پێست.",
-    "price": 28000,
-    "shape": "jar",
-    "tag": "شێدارکەرەوە",
-    "image": "",
-    "gallery": [],
-    "variants": [],
-    "ingredients": []
-  },
-  {
-    "id": "p4",
-    "name": "مینی سێتی کیراستاس",
-    "english": "Kérastase Mini Iconics Trio Hair Ritual",
-    "category": "skincare",
-    "type": "سێتی چاودێری قژ",
-    "desc": "بەهێزکردن و خۆراک پێدان ، ڕەونەقدارکردنی قژ.",
-    "price": 144000,
-    "shape": "bottle",
-    "tag": "نوێ",
-    "image": "IMG_20261015_225702.jpg",
-    "gallery": [],
-    "variants": [],
-    "ingredients": [
-      "شامپۆی پاککەر (Genesis) – پێشگیری لە بەریزبوونەوە و تێکچوون",
-      "ماسک (Nutritive) – نەرمی و لەمەڕیی قژ",
-      "زەیتی خاو (Elixir Ultime) – ڕووناکی و شێدارکەرەوە"
-    ]
-  },
-  {
     "id": "p5",
     "name": "جیفنچی - ئێل ئەنتەردیت ئێلیکسیر",
     "english": "Givenchy L'Interdit Elixir",
     "category": "perfume",
     "type": "بۆن",
-    "desc": "عەترێکی لوکس، گەرم و سەرنجڕاکێشە کە تێکەڵەیەکی قووڵە لە گیلاسی ڕەش، گوڵی سپی و ڤانیلا. هەڵبژاردەیەکی نایابە بۆ شەوان و کەشی سارد بە مانداگارێتییەکی بەرزەوە.",
+    "desc": "عەترێکی لوکس، گەرم و سەرنجڕاکێشە کە تێکەڵەیەکی قووڵە لە گیلاسی ڕەش، گوڵی سپی و ڤانیلا.",
     "price": 155000,
     "oldPrice": 180000,
     "shape": "bottle",
@@ -67,27 +17,21 @@
         "size": "35ml",
         "price": 155000,
         "oldPrice": 180000,
-        "gallery": [
-          "images/file_000000007ff082119f10b8d4d6297357.png"
-        ]
+        "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
       },
       {
         "size": "50ml",
         "price": 210000,
         "oldPrice": 250000,
-        "gallery": [
-          "images/file_000000007ff082119f10b8d4d6297357.png"
-        ]
+        "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
       },
       {
         "size": "80ml",
         "price": 280000,
         "oldPrice": 320000,
-        "gallery": [
-          "images/file_000000007ff082119f10b8d4d6297357.png"
-        ]
+        "gallery": ["images/file_000000007ff082119f10b8d4d6297357.png"]
       }
     ],
-    "ingredients": []
+    "ingredients": ["پێکهاتەی عەتری Givenchy L'Interdit"]
   }
 ]
