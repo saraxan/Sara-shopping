@@ -45,24 +45,22 @@
     "category": "perfume",
     "type": "بۆن",
     "desc": "هەستی خۆشەویستی و جوانی دەگەیەنێت.",
-    "price": 165000,
-    "oldPrice": 0,
+    "price": 77000,
     "shape": "bottle",
     "tag": "نوێ",
-    "image": "images/Cara_Mia_Ti_Amo.jpg",
-    "gallery":["images/Cara.mia.jpg"],
+    "image": "images/NAWY-WINYAKA-LERA-DANEYE.jpg",
+    "gallery": [],
     "variants": [
       {
         "size": "50ml",
         "price": 77000,
         "oldPrice": 147000,
-        "gallery": ["images/Cara_Mia_50.jpg"]
+        "gallery": ["images/NAWY-WINYAKA-LERA-DANEYE.jpg"]
       },
       {
         "size": "100ml",
         "price": 168000,
-        "oldPrice": 0,
-        "gallery": ["images/Cara_Mia_100.jpg"]
+        "gallery": ["images/NAWY-WINYAKA-LERA-DANEYE.jpg"]
       }
     ],
     "notes": {
