@@ -37,5 +37,38 @@
       "heart": "گوڵی سپی، یاسەمین",
       "base": "ڤانیلا، پەچولی، مشک"
     }
+  },
+  {
+    "id": "p6",
+    "name": "کــارا میا تیامۆ",
+    "english": "Cara Mia Ti Amo",
+    "category": "perfume",
+    "type": "بۆن",
+    "desc": "عەترێکی ژنانە بە دیزاینێکی ناسک و ڕۆمانسی، گونجاو بۆ ئەو ژنانەی حەزیان لە بۆنێکی لۆکس و خانمانە و نازدار و جیاوازە. شوشەی پەمەیی و ناوی ڕۆمانسییەکەی، هەستی خۆشەویستی و جوانی دەگەیەنێت.",
+    "price": 165000,
+    "oldPrice": 150000,
+    "shape": "bottle",
+    "tag": "نوێ",
+    "image": "images/your-image.jpg",
+    "gallery": [],
+    "variants": [
+      {
+        "size": "50ml",
+        "price": 120000,
+        "oldPrice": 150000,
+        "gallery": ["images/your-image.jpg"]
+      },
+      {
+        "size": "100ml",
+        "price": 180000,
+        "oldPrice": 220000,
+        "gallery": ["images/your-image.jpg"]
+      }
+    ],
+    "notes": {
+      "top": "نۆتەی سەرەتا",
+      "heart": "نۆتەی ناوەڕاست",
+      "base": "نۆتەی بنکە"
+    }
   }
 ]
