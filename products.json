@@ -46,27 +46,27 @@
     "type": "بۆن",
     "desc": "عەترێکی ژنانە بە دیزاینێکی ناسک و ڕۆمانسی، گونجاو بۆ ئەو ژنانەی حەزیان لە بۆنێکی لۆکس و خانمانە و نازدار و جیاوازە. شوشەی پەمەیی و ناوی ڕۆمانسییەکەی، هەستی خۆشەویستی و جوانی دەگەیەنێت.",
     "price": 165000,
-    "oldPrice": 150000,
+    "oldPrice": ,
     "shape": "bottle",
     "tag": "نوێ",
-    "image": "images/your-image.jpg",
+    "image": "images/Cara_Mia_Ti_Amo.jpg",
     "gallery": [],
     "variants": [
       {
         "size": "50ml",
-        "price": 120000,
+        "price": 77000,
         "oldPrice": 150000,
-        "gallery": ["images/your-image.jpg"]
+        "gallery": ["images/Cara_Mia_50.jpg"]
       },
       {
         "size": "100ml",
-        "price": 180000,
-        "oldPrice": 220000,
-        "gallery": ["images/your-image.jpg"]
+        "price": 168000,
+        "oldPrice": ,
+        "gallery": ["images/Cara_Mia_100.jpg"]
       }
     ],
     "notes": {
-      "top": "نۆتەی سەرەتا",
+      "top": "نۆتەکانی سەرەتا",
       "heart": "نۆتەی ناوەڕاست",
       "base": "نۆتەی بنکە"
     }
